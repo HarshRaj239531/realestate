@@ -224,15 +224,45 @@
         @yield('content')
     </main>
 
-    <!-- 3. Floating WhatsApp Button (Bottom-Left) matching reference design -->
-    <a href="https://wa.me/{{ $siteSettings['contact_whatsapp'] ?? '919876543210' }}?text=Hello%20RealEstate,%20I%20am%20interested%20in%20eco-friendly%20properties." target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="fixed bottom-6 left-6 z-50 w-13 h-13 sm:w-14 sm:h-14 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 group">
-        <svg class="w-7 h-7 sm:w-8 sm:h-8 fill-current" viewBox="0 0 24 24">
-            <path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.996.586 3.864 1.599 5.437L2 22l4.675-1.564a9.986 9.986 0 005.356 1.595h.005c5.536 0 10.031-4.496 10.031-10.031C22.067 6.495 17.572 2 12.031 2zm5.836 14.199c-.244.688-1.42 1.32-1.954 1.399-.505.076-1.157.108-3.714-.954-3.197-1.326-5.244-4.577-5.402-4.788-.159-.211-1.3-1.73-1.3-3.3 0-1.57.82-2.344 1.111-2.662.29-.317.635-.396.847-.396.211 0 .423.002.608.01.196.01.458-.074.717.548.265.635.9 2.196.98 2.355.079.159.132.344.026.556-.105.211-.158.343-.317.528-.159.185-.333.413-.476.556-.158.158-.323.33-.138.647.185.317.82 1.353 1.761 2.19 1.209 1.076 2.228 1.411 2.545 1.57.318.158.503.132.688-.079.185-.212.793-.926 1.005-1.243.212-.317.423-.264.714-.158.291.106 1.85.872 2.167 1.031.317.159.529.238.608.37.079.133.079.768-.165 1.456z"/>
-        </svg>
-        <span class="absolute left-16 bg-slate-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
-            Chat with an Advisor
-        </span>
-    </a>
+    <!-- 3. Floating WhatsApp Widget (Bottom-Left) matching user design perfectly -->
+    <div class="fixed bottom-6 left-6 z-50 flex flex-col items-start space-y-3">
+        <!-- Top Chat Bubble with Dismiss button and offset green pill -->
+        <div id="whatsappChatBubble" class="flex items-center space-x-2.5 transition-all duration-300">
+            <!-- Small Black Circle Close Button -->
+            <button onclick="dismissWhatsAppBubble()" 
+                    type="button"
+                    aria-label="Close chat prompt" 
+                    class="w-6 h-6 rounded-full bg-black text-white hover:bg-slate-800 flex items-center justify-center transition shadow-md cursor-pointer shrink-0">
+                <svg class="w-2.5 h-2.5 stroke-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+
+            <!-- "Chat with us" Pill with vibrant green offset shadow -->
+            <a href="https://wa.me/{{ $siteSettings['contact_whatsapp'] ?? '919876543210' }}?text=Hello%20RealEstate,%20I%20am%20interested%20in%20eco-friendly%20properties." 
+               target="_blank" 
+               rel="noopener" 
+               class="relative group block select-none">
+                <!-- Bottom-right offset green shape -->
+                <div class="absolute inset-0 translate-y-1 bg-[#00e785] rounded-full"></div>
+                <!-- Main white pill with dark border -->
+                <div class="relative bg-white border-[1.5px] border-slate-900 rounded-full px-5 py-1.5 sm:py-2 flex items-center justify-center shadow-sm group-hover:-translate-y-0.5 group-active:translate-y-0.5 transition-transform duration-150">
+                    <span class="text-slate-900 font-bold text-[14px] sm:text-[15px] tracking-tight whitespace-nowrap">Chat with us</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Floating Green WhatsApp Circle -->
+        <a href="https://wa.me/{{ $siteSettings['contact_whatsapp'] ?? '919876543210' }}?text=Hello%20RealEstate,%20I%20am%20interested%20in%20eco-friendly%20properties." 
+           target="_blank" 
+           rel="noopener" 
+           aria-label="Chat with us on WhatsApp" 
+           class="w-14 h-14 bg-[#00e785] hover:bg-[#00d475] text-white rounded-full flex items-center justify-center shadow-xl shadow-emerald-500/30 hover:scale-105 active:scale-95 transition-all duration-200">
+            <svg class="w-7 h-7 fill-white" viewBox="0 0 24 24">
+                <path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.996.586 3.864 1.599 5.437L2 22l4.675-1.564a9.986 9.986 0 005.356 1.595h.005c5.536 0 10.031-4.496 10.031-10.031C22.067 6.495 17.572 2 12.031 2zm5.836 14.199c-.244.688-1.42 1.32-1.954 1.399-.505.076-1.157.108-3.714-.954-3.197-1.326-5.244-4.577-5.402-4.788-.159-.211-1.3-1.73-1.3-3.3 0-1.57.82-2.344 1.111-2.662.29-.317.635-.396.847-.396.211 0 .423.002.608.01.196.01.458-.074.717.548.265.635.9 2.196.98 2.355.079.159.132.344.026.556-.105.211-.158.343-.317.528-.159.185-.333.413-.476.556-.158.158-.323.33-.138.647.185.317.82 1.353 1.761 2.19 1.209 1.076 2.228 1.411 2.545 1.57.318.158.503.132.688-.079.185-.212.793-.926 1.005-1.243.212-.317.423-.264.714-.158.291.106 1.85.872 2.167 1.031.317.159.529.238.608.37.079.133.079.768-.165 1.456z"/>
+            </svg>
+        </a>
+    </div>
 
     <!-- 4. Floating QUICK ENQUIRY Vertical Tab (Right Viewport Edge) matching design -->
     <button onclick="toggleQuickEnquiry()" class="fixed top-1/2 right-0 -translate-y-1/2 z-50 bg-brand-topbar hover:bg-brand-primary text-white text-xs font-bold tracking-widest uppercase py-4 px-2 rounded-l-md shadow-2xl transition duration-200 flex items-center justify-center cursor-pointer border-l-2 border-emerald-400">
@@ -383,6 +413,22 @@
                 modal.classList.remove('flex');
             }
         }
+
+        function dismissWhatsAppBubble() {
+            const bubble = document.getElementById('whatsappChatBubble');
+            if (bubble) {
+                bubble.classList.add('opacity-0', 'scale-90', 'pointer-events-none');
+                setTimeout(() => bubble.remove(), 250);
+                sessionStorage.setItem('wa_bubble_dismissed', 'true');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (sessionStorage.getItem('wa_bubble_dismissed') === 'true') {
+                const bubble = document.getElementById('whatsappChatBubble');
+                if (bubble) bubble.remove();
+            }
+        });
     </script>
 </body>
 </html>
