@@ -377,7 +377,75 @@
         </div>
     </section>
 
-    <!-- 6. CALL TO ACTION / QUICK INQUIRY BANNER -->
+    <!-- 6. THE MINDS OF TRUST (LEADERSHIP & EXPERTS SECTION) -->
+    <section class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.28em] text-amber-700">
+                    EXPERTS BEHIND {{ $siteSettings['brand_name'] ?? 'S.K.' }}
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight mt-2.5">
+                    THE MINDS OF TRUST
+                </h2>
+                <div class="w-14 h-1 bg-amber-600/80 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Leadership Team Grid -->
+            @php
+                $teamMembers = [
+                    [
+                        'name' => 'SANDEEP TYAGI',
+                        'role' => 'FOUNDER & CEO',
+                        'image' => 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=85',
+                    ],
+                    [
+                        'name' => 'RAJEEV TYAGI',
+                        'role' => 'ACQUISITION MANAGER',
+                        'image' => 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=85',
+                    ],
+                    [
+                        'name' => 'PAWAN TYAGI',
+                        'role' => 'SALES & ROI SPECIALIST',
+                        'image' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=85',
+                    ],
+                    [
+                        'name' => 'NEHA GUPTA',
+                        'role' => 'CUSTOMER SUCCESS',
+                        'image' => 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=85',
+                    ],
+                ];
+            @endphp
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                @foreach($teamMembers as $member)
+                    <div class="group text-center flex flex-col">
+                        <!-- Portrait Box -->
+                        <div class="relative w-full aspect-[4/3] overflow-hidden bg-slate-100 rounded-sm shadow-sm border border-slate-200/70 group-hover:shadow-lg transition-all duration-300">
+                            <img src="{{ $member['image'] }}" 
+                                 alt="{{ $member['name'] }}" 
+                                 class="w-full h-full object-cover object-top filter grayscale contrast-105 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+
+                        <!-- Info -->
+                        <div class="mt-4 space-y-1">
+                            <h3 class="text-sm sm:text-base font-extrabold text-slate-900 uppercase tracking-wider group-hover:text-emerald-700 transition duration-200">
+                                {{ $member['name'] }}
+                            </h3>
+                            <p class="text-[11px] font-semibold text-slate-500 uppercase tracking-[0.20em]">
+                                {{ $member['role'] }}
+                            </p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 7. CALL TO ACTION / QUICK INQUIRY BANNER -->
     @php
         $ctaBg = isset($siteImages['cta_banner']) ? $siteImages['cta_banner']->url : 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80';
     @endphp
