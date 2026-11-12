@@ -384,10 +384,10 @@
             <!-- Section Header -->
             <div class="text-center max-w-3xl mx-auto mb-14" data-motion="fade-up">
                 <span class="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.28em] text-amber-700">
-                    EXPERTS BEHIND {{ $siteSettings['brand_name'] ?? 'S.K.' }}
+                    {{ $siteSettings['team_subtitle'] ?? ('EXPERTS BEHIND ' . ($siteSettings['brand_name'] ?? 'S.K.')) }}
                 </span>
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight mt-2.5">
-                    THE MINDS OF TRUST
+                    {{ $siteSettings['team_title'] ?? 'THE MINDS OF TRUST' }}
                 </h2>
                 <div class="w-14 h-1 bg-amber-600/80 mx-auto mt-4 rounded-full"></div>
             </div>
@@ -396,24 +396,24 @@
             @php
                 $teamMembers = [
                     [
-                        'name' => 'SANDEEP TYAGI',
-                        'role' => 'FOUNDER & CEO',
-                        'image' => 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=85',
+                        'name' => $siteSettings['team_member_1_name'] ?? 'SANDEEP TYAGI',
+                        'role' => $siteSettings['team_member_1_role'] ?? 'FOUNDER & CEO',
+                        'image' => $siteSettings['team_member_1_image'] ?? 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=85',
                     ],
                     [
-                        'name' => 'RAJEEV TYAGI',
-                        'role' => 'ACQUISITION MANAGER',
-                        'image' => 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=85',
+                        'name' => $siteSettings['team_member_2_name'] ?? 'RAJEEV TYAGI',
+                        'role' => $siteSettings['team_member_2_role'] ?? 'ACQUISITION MANAGER',
+                        'image' => $siteSettings['team_member_2_image'] ?? 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=85',
                     ],
                     [
-                        'name' => 'PAWAN TYAGI',
-                        'role' => 'SALES & ROI SPECIALIST',
-                        'image' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=85',
+                        'name' => $siteSettings['team_member_3_name'] ?? 'PAWAN TYAGI',
+                        'role' => $siteSettings['team_member_3_role'] ?? 'SALES & ROI SPECIALIST',
+                        'image' => $siteSettings['team_member_3_image'] ?? 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=85',
                     ],
                     [
-                        'name' => 'NEHA GUPTA',
-                        'role' => 'CUSTOMER SUCCESS',
-                        'image' => 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=85',
+                        'name' => $siteSettings['team_member_4_name'] ?? 'NEHA GUPTA',
+                        'role' => $siteSettings['team_member_4_role'] ?? 'CUSTOMER SUCCESS',
+                        'image' => $siteSettings['team_member_4_image'] ?? 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=85',
                     ],
                 ];
             @endphp
@@ -455,10 +455,10 @@
             <!-- Section Header (Matching Reference Image Typography with Project Styling) -->
             <div class="text-center max-w-3xl mx-auto mb-16" data-motion="fade-up">
                 <span class="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.28em] text-amber-700">
-                    WHAT OUR CLIENTS SAY
+                    {{ $siteSettings['testimonials_subtitle'] ?? 'WHAT OUR CLIENTS SAY' }}
                 </span>
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight mt-2.5">
-                    TRUSTED BY THOUSANDS
+                    {{ $siteSettings['testimonials_title'] ?? 'TRUSTED BY THOUSANDS' }}
                 </h2>
                 <div class="flex items-center justify-center space-x-2 mt-4">
                     <div class="h-0.5 w-10 bg-amber-500/50 rounded-full"></div>
@@ -478,35 +478,35 @@
                 $clientReviews = [
                     [
                         'initials' => 'AK',
-                        'name' => 'AMIT KHANNA',
-                        'role' => 'BUYER, RAJ NAGAR EXT.',
+                        'name' => $siteSettings['review_1_name'] ?? 'AMIT KHANNA',
+                        'role' => $siteSettings['review_1_role'] ?? 'BUYER, RAJ NAGAR EXT.',
                         'top_border' => 'border-emerald-600',
                         'avatar_bg' => 'bg-slate-900 text-white',
                         'tag_color' => 'bg-emerald-50 text-emerald-800 border-emerald-200/60',
-                        'highlight' => 'Zero Brokerage Deal',
-                        'quote' => 'Dealing with ' . ($siteSettings['brand_name'] ?? 'S.K. Infratech') . ' was remarkably seamless. They guided me through every step of the legal registry. Their zero-brokerage model saved me ₹80,000 while ensuring completely transparent legal possession.',
+                        'highlight' => $siteSettings['review_1_tag'] ?? 'Zero Brokerage Deal',
+                        'quote' => $siteSettings['review_1_quote'] ?? ('Dealing with ' . ($siteSettings['brand_name'] ?? 'S.K. Infratech') . ' was remarkably seamless. They guided me through every step of the legal registry. Their zero-brokerage model saved me ₹80,000 while ensuring completely transparent legal possession.'),
                         'is_featured' => false,
                     ],
                     [
                         'initials' => 'VP',
-                        'name' => 'VIKAS PANWAR',
-                        'role' => 'SELLER, MEERUT',
+                        'name' => $siteSettings['review_2_name'] ?? 'VIKAS PANWAR',
+                        'role' => $siteSettings['review_2_role'] ?? 'SELLER, MEERUT',
                         'top_border' => 'border-amber-500',
                         'avatar_bg' => 'bg-amber-600 text-white shadow-amber-500/30',
                         'tag_color' => 'bg-amber-50 text-amber-900 border-amber-200/70',
-                        'highlight' => 'Verified Quick Sale',
-                        'quote' => 'I needed urgent liquidity for my business and wanted to sell my plot. Their site team visited within 2 hours and handed over the token advance the next morning. Fair valuation and absolute integrity!',
+                        'highlight' => $siteSettings['review_2_tag'] ?? 'Verified Quick Sale',
+                        'quote' => $siteSettings['review_2_quote'] ?? 'I needed urgent liquidity for my business and wanted to sell my plot. Their site team visited within 2 hours and handed over the token advance the next morning. Fair valuation and absolute integrity!',
                         'is_featured' => true,
                     ],
                     [
                         'initials' => 'RJ',
-                        'name' => 'RITU JHA',
-                        'role' => 'INVESTOR, DELHI',
+                        'name' => $siteSettings['review_3_name'] ?? 'RITU JHA',
+                        'role' => $siteSettings['review_3_role'] ?? 'INVESTOR, DELHI',
                         'top_border' => 'border-slate-800',
                         'avatar_bg' => 'bg-slate-900 text-white',
                         'tag_color' => 'bg-slate-100 text-slate-800 border-slate-200',
-                        'highlight' => 'Legal Peace of Mind',
-                        'quote' => 'Title documentation was my biggest concern when investing in property. But their legal department thoroughly verified 30 years of chain title deeds and revenue records. Pure legal peace of mind.',
+                        'highlight' => $siteSettings['review_3_tag'] ?? 'Legal Peace of Mind',
+                        'quote' => $siteSettings['review_3_quote'] ?? 'Title documentation was my biggest concern when investing in property. But their legal department thoroughly verified 30 years of chain title deeds and revenue records. Pure legal peace of mind.',
                         'is_featured' => false,
                     ],
                 ];
@@ -607,10 +607,10 @@
             <!-- Section Header -->
             <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-14" data-motion="fade-up">
                 <span class="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.28em] text-amber-700">
-                    FREQUENTLY ASKED QUESTIONS
+                    {{ $siteSettings['faq_subtitle'] ?? 'FREQUENTLY ASKED QUESTIONS' }}
                 </span>
                 <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-2.5">
-                    CLARITY & LEGAL PEACE OF MIND
+                    {{ $siteSettings['faq_title'] ?? 'CLARITY & LEGAL PEACE OF MIND' }}
                 </h2>
                 <div class="w-12 h-1 bg-amber-500/60 mx-auto mt-3.5 rounded-full"></div>
             </div>
@@ -619,28 +619,28 @@
             @php
                 $faqs = [
                     [
-                        'q' => 'ARE THE PROPERTY TITLES AND DOCUMENTS 100% GUARANTEED?',
-                        'a' => 'Every property in our verified inventory is directly acquired and legally vetted by our senior counsel. We conduct exhaustive 30-year chain title searches, revenue mutation checks, and encumbrance inspections before offering any listing. You are always welcome to request document copies for independent verification with your own lawyer.',
+                        'q' => $siteSettings['faq_1_q'] ?? 'ARE THE PROPERTY TITLES AND DOCUMENTS 100% GUARANTEED?',
+                        'a' => $siteSettings['faq_1_a'] ?? 'Every property in our verified inventory is directly acquired and legally vetted by our senior counsel. We conduct exhaustive 30-year chain title searches, revenue mutation checks, and encumbrance inspections before offering any listing. You are always welcome to request document copies for independent verification with your own lawyer.',
                     ],
                     [
-                        'q' => 'WHAT IF AN ISSUE ARISES DURING THE REGISTRY PROCESS?',
-                        'a' => 'Our in-house legal team assists you in person at the Sub-Registrar and Tehsil office from Day 1 through final physical possession. In the rare event of any unresolvable title defect or dispute, we provide a 100% token refund guarantee in writing.',
+                        'q' => $siteSettings['faq_2_q'] ?? 'WHAT IF AN ISSUE ARISES DURING THE REGISTRY PROCESS?',
+                        'a' => $siteSettings['faq_2_a'] ?? 'Our in-house legal team assists you in person at the Sub-Registrar and Tehsil office from Day 1 through final physical possession. In the rare event of any unresolvable title defect or dispute, we provide a 100% token refund guarantee in writing.',
                     ],
                     [
-                        'q' => 'CAN THE PROPERTY PRICE BE NEGOTIATED?',
-                        'a' => 'All our pricing is direct-from-owner with zero third-party middleman and zero brokerage commission. While our quoted prices are highly competitive, our sales directors offer reasonable flexibility on payment milestones and token terms during in-person discussions.',
+                        'q' => $siteSettings['faq_3_q'] ?? 'CAN THE PROPERTY PRICE BE NEGOTIATED?',
+                        'a' => $siteSettings['faq_3_a'] ?? 'All our pricing is direct-from-owner with zero third-party middleman and zero brokerage commission. While our quoted prices are highly competitive, our sales directors offer reasonable flexibility on payment milestones and token terms during in-person discussions.',
                     ],
                     [
-                        'q' => 'WHAT PAYMENT MODES AND SCHEDULES ARE ACCEPTED?',
-                        'a' => 'We accept payments through Cheque, RTGS, NEFT, Net Banking, and pre-approved Bank Home Loans. All transactions are officially recorded with government stamp duty receipts for absolute financial compliance and security.',
+                        'q' => $siteSettings['faq_4_q'] ?? 'WHAT PAYMENT MODES AND SCHEDULES ARE ACCEPTED?',
+                        'a' => $siteSettings['faq_4_a'] ?? 'We accept payments through Cheque, RTGS, NEFT, Net Banking, and pre-approved Bank Home Loans. All transactions are officially recorded with government stamp duty receipts for absolute financial compliance and security.',
                     ],
                     [
-                        'q' => 'HOW CAN I INDEPENDENTLY VERIFY THE REGISTRY STATUS?',
-                        'a' => 'We provide certified hard copies of the Khasra number, Revenue Khatauni, Encumbrance Certificate (EC), and Tehsil records directly retrieved from the official government land registry portal for your independent legal vetting.',
+                        'q' => $siteSettings['faq_5_q'] ?? 'HOW CAN I INDEPENDENTLY VERIFY THE REGISTRY STATUS?',
+                        'a' => $siteSettings['faq_5_a'] ?? 'We provide certified hard copies of the Khasra number, Revenue Khatauni, Encumbrance Certificate (EC), and Tehsil records directly retrieved from the official government land registry portal for your independent legal vetting.',
                     ],
                     [
-                        'q' => 'DO YOU ACQUIRE RESIDENTIAL AND AGRICULTURAL LAND IN DELHI NCR & WEST UP?',
-                        'a' => 'Yes. If your land parcel holds a clean freehold title, direct road access, and clear revenue demarcations, our acquisition team conducts an on-site inspection within 24 to 48 hours to propose a fair market valuation and token advance.',
+                        'q' => $siteSettings['faq_6_q'] ?? 'DO YOU ACQUIRE RESIDENTIAL AND AGRICULTURAL LAND IN DELHI NCR & WEST UP?',
+                        'a' => $siteSettings['faq_6_a'] ?? 'Yes. If your land parcel holds a clean freehold title, direct road access, and clear revenue demarcations, our acquisition team conducts an on-site inspection within 24 to 48 hours to propose a fair market valuation and token advance.',
                     ],
                 ];
             @endphp

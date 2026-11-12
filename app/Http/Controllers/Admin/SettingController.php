@@ -23,11 +23,17 @@ class SettingController extends Controller
         $data = $request->except(['_token']);
 
         foreach ($data as $key => $value) {
-            SiteSetting::where('key', $key)->update(['value' => $value]);
+            SiteSetting::updateOrCreate(
+                ['key' => $key],
+                [
+                    'value' => $value ?? '',
+                    'label' => ucwords(str_replace('_', ' ', $key)),
+                ]
+            );
             Cache::forget("site_setting_{$key}");
         }
 
-        return back()->with('success', 'Site settings and brand theme colors have been updated successfully!');
+        return back()->with('success', 'Site settings and brand configurations have been saved successfully!');
     }
 }
 
