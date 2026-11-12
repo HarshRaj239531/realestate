@@ -445,7 +445,147 @@
         </div>
     </section>
 
-    <!-- 7. CALL TO ACTION / QUICK INQUIRY BANNER -->
+    <!-- 7. CLIENT TESTIMONIALS & REVIEWS SECTION -->
+    <section class="py-20 bg-slate-50 border-t border-slate-200/70 relative overflow-hidden">
+        <!-- Subtle Background Decors -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-emerald-100/50 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-slate-200/50 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-14">
+                <div>
+                    <div class="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/80 px-3.5 py-1.5 rounded-full border border-emerald-200/60">
+                        <span>⭐ Client Testimonials</span>
+                        <span class="text-emerald-500">•</span>
+                        <span>4.9 / 5 Rating</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight mt-3">
+                        What Our Homeowners Say
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 mt-2 max-w-xl">
+                        Real experiences from families and investors who built their sustainable future with us.
+                    </p>
+                </div>
+
+                <div class="mt-4 md:mt-0 flex items-center space-x-2 text-xs font-semibold text-slate-500">
+                    <span class="inline-flex items-center text-amber-500">
+                        @for($i = 0; $i < 5; $i++)
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        @endfor
+                    </span>
+                    <span class="font-bold text-slate-800">1,200+ Verified Buyers</span>
+                </div>
+            </div>
+
+            <!-- Testimonials Grid -->
+            @php
+                $testimonials = [
+                    [
+                        'name' => 'Vikramaditya & Ananya Singhania',
+                        'role' => 'Villa Owners, Sector 65',
+                        'badge' => 'Solar Villa Buyer',
+                        'image' => 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
+                        'rating' => 5,
+                        'text' => 'Moving into an eco-certified villa cut our electricity bills by nearly 65% with the integrated rooftop solar grid. The cross-ventilation and natural lighting make the home feel completely refreshed every single day. The best decision for our family!',
+                    ],
+                    [
+                        'name' => 'Dr. Rajesh K. Nair',
+                        'role' => 'Investor, Greenbelt Farms',
+                        'badge' => 'Verified Investor',
+                        'image' => 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80',
+                        'rating' => 5,
+                        'text' => 'The absolute transparency shown by the leadership team is rare in the NCR property market. 100% clear titles, zero litigation, and meticulous groundwater recharge planning. My investment appreciated significantly within just 18 months.',
+                    ],
+                    [
+                        'name' => 'Meera Kapoor & Family',
+                        'role' => 'Resident, Biophilic Skyline',
+                        'badge' => 'Penthouse Resident',
+                        'image' => 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80',
+                        'rating' => 5,
+                        'text' => 'From our first site visit to the keys handover, the customer success team treated us like family. Our kids adore the private fruit groves and organic play areas. Living sustainably without sacrificing luxury is truly possible here.',
+                    ],
+                ];
+            @endphp
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @foreach($testimonials as $item)
+                    <div class="bg-white rounded-2xl p-7 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col justify-between relative group">
+                        
+                        <!-- Decorative Quote Icon -->
+                        <div class="absolute top-6 right-6 text-slate-100 group-hover:text-emerald-50 transition-colors duration-300">
+                            <svg class="w-12 h-12 fill-current" viewBox="0 0 32 32">
+                                <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14h-6c0-2.2 1.8-4 4-4V8zm14 0c-3.3 0-6 2.7-6 6v10h10V14h-6c0-2.2 1.8-4 4-4V8z"/>
+                            </svg>
+                        </div>
+
+                        <!-- Top: Star Rating + Tag -->
+                        <div class="relative z-10 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-1 text-amber-400">
+                                    @for($i = 0; $i < $item['rating']; $i++)
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                    @endfor
+                                </div>
+                                <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">
+                                    {{ $item['badge'] }}
+                                </span>
+                            </div>
+
+                            <!-- Testimonial Quote -->
+                            <p class="text-sm text-slate-700 leading-relaxed italic">
+                                "{{ $item['text'] }}"
+                            </p>
+                        </div>
+
+                        <!-- Bottom: User Identity -->
+                        <div class="pt-6 mt-6 border-t border-slate-100 flex items-center space-x-3.5 relative z-10">
+                            <img src="{{ $item['image'] }}" 
+                                 alt="{{ $item['name'] }}" 
+                                 class="w-12 h-12 rounded-full object-cover border-2 border-emerald-500/30 shadow-sm flex-shrink-0">
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition">
+                                    {{ $item['name'] }}
+                                </h4>
+                                <p class="text-[11px] text-slate-500 font-medium">
+                                    {{ $item['role'] }}
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                @endforeach
+            </div>
+
+            <!-- Trust Stats Footer -->
+            <div class="mt-14 pt-10 border-t border-slate-200/60 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-4 bg-white/60 rounded-xl border border-slate-100 shadow-xs">
+                    <div class="text-2xl sm:text-3xl font-black text-slate-900">99.4%</div>
+                    <div class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-1">Satisfaction Rate</div>
+                </div>
+                <div class="p-4 bg-white/60 rounded-xl border border-slate-100 shadow-xs">
+                    <div class="text-2xl sm:text-3xl font-black text-brand-primary">10,000+</div>
+                    <div class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-1">Keys Delivered</div>
+                </div>
+                <div class="p-4 bg-white/60 rounded-xl border border-slate-100 shadow-xs">
+                    <div class="text-2xl sm:text-3xl font-black text-slate-900">100%</div>
+                    <div class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-1">Clean Title Deeded</div>
+                </div>
+                <div class="p-4 bg-white/60 rounded-xl border border-slate-100 shadow-xs">
+                    <div class="text-2xl sm:text-3xl font-black text-emerald-600">65% Avg</div>
+                    <div class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-1">Power Savings</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 8. CALL TO ACTION / QUICK INQUIRY BANNER -->
     @php
         $ctaBg = isset($siteImages['cta_banner']) ? $siteImages['cta_banner']->url : 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80';
     @endphp
