@@ -600,7 +600,134 @@
         </div>
     </section>
 
-    <!-- 8. CALL TO ACTION / QUICK INQUIRY BANNER -->
+    <!-- 8. FREQUENTLY ASKED QUESTIONS (FAQ ACCORDION SECTION) -->
+    <section class="py-20 bg-white border-t border-slate-100 relative overflow-hidden" id="faq-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Left Column: Sticky Title & Quick Contact Card (4 cols) -->
+                <div class="lg:col-span-4 lg:sticky lg:top-28 space-y-6">
+                    <div>
+                        <span class="inline-flex items-center space-x-1.5 text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/90 px-3.5 py-1.5 rounded-full border border-emerald-200">
+                            <span>💡 Knowledge Base</span>
+                            <span class="text-emerald-500">•</span>
+                            <span>Transparent Guidance</span>
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-3 leading-tight">
+                            Frequently Asked Questions
+                        </h2>
+                        <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                            Clear, honest answers about property legalities, registry, zero-brokerage savings, and eco-certified sustainable living.
+                        </p>
+                    </div>
+
+                    <!-- Quick Support Card -->
+                    <div class="bg-gradient-to-br from-slate-900 to-brand-topbar text-white p-6 rounded-2xl shadow-xl border border-slate-800 space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-lg">
+                                💬
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Have a specific question?</h4>
+                                <p class="text-xs text-slate-400">Our legal & property advisors are online.</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 pt-2">
+                            <a href="tel:{{ $siteSettings['contact_phone'] ?? '+919876543210' }}" class="w-full py-2.5 px-4 bg-white/10 hover:bg-white/20 text-white font-bold text-xs rounded-xl transition flex items-center justify-center space-x-2 border border-white/10">
+                                <span>📞 Call: {{ $siteSettings['contact_phone'] ?? '+91 98765 43210' }}</span>
+                            </a>
+                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $siteSettings['contact_phone'] ?? '+919876543210') }}?text={{ urlencode('Hello, I have an inquiry about your properties.') }}" target="_blank" class="w-full py-2.5 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition flex items-center justify-center space-x-2 shadow-md">
+                                <span>💬 Chat on WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive FAQ Accordions (8 cols) -->
+                <div class="lg:col-span-8 space-y-4">
+                    @php
+                        $faqs = [
+                            [
+                                'q' => 'How do you guarantee 100% legal title verification and clean registry?',
+                                'a' => 'Every single plot, villa, and apartment listed with us undergoes an exhaustive 30-year chain title search conducted by our senior property advocates. We verify government revenue records, encumbrance certificates (EC), mutation entries, and local authority master-plan zoning before offering any property. Registry and stamp duty documentation are fully assisted by our in-house legal desk at zero brokerage fees.',
+                                'badge' => 'Legal & Registry',
+                            ],
+                            [
+                                'q' => 'What makes these homes eco-friendly, and how much can I save on power bills?',
+                                'a' => 'Our homes feature integrated rooftop on-grid solar photovoltaic systems, rainwater percolation recharge wells, double-glazed insulated windows, and thermal fly-ash brick masonry. Homeowners typically experience a 55% to 70% reduction in monthly electricity bills, alongside uninterrupted 24/7 backup and dual-plumbing greywater reuse for gardens.',
+                                'badge' => 'Sustainability & Savings',
+                            ],
+                            [
+                                'q' => 'Are site visits completely free of cost, and how do I schedule one?',
+                                'a' => 'Yes, 100% complimentary site visits are provided across Delhi NCR, Gurugram, and West UP. We arrange air-conditioned doorstep pickup and an on-site walkthrough guided by a senior property specialist who explains plot dimensions, sunlight orientation, structural floorplans, and sample show-villas.',
+                                'badge' => 'Complimentary Site Visit',
+                            ],
+                            [
+                                'q' => 'Are your properties pre-approved for bank home loans?',
+                                'a' => 'Yes, all our developments are pre-sanctioned and approved by leading nationalized and private financial institutions, including SBI, HDFC Bank, ICICI Bank, and PNB Housing. We assist you with doorstep loan document collection, quick technical valuation, and fast-track disbursals at competitive interest rates.',
+                                'badge' => 'Home Loans (SBI / HDFC)',
+                            ],
+                            [
+                                'q' => 'Is there any hidden brokerage or service commission on purchases?',
+                                'a' => 'No. We follow a strict Direct-to-Owner / Direct-to-Developer policy. Buyers pay exactly ₹0 in brokerage fees. You receive a complete cost breakdown upfront—including basic selling price, parking, PLC (Preferential Location Charges), and approximate government stamp duty—with zero hidden surprises.',
+                                'badge' => 'Zero Brokerage Guarantee',
+                            ],
+                            [
+                                'q' => 'Can you help me sell or lease my property in the future?',
+                                'a' => 'Absolutely. We maintain a dedicated Secondary Resale & Leasing desk. Should you wish to liquidate your investment or find high-yield corporate tenants, our sales network connects you with verified buyers and provides fair market valuation with fast token settlements.',
+                                'badge' => 'Resale & Liquidity Desk',
+                            ],
+                        ];
+                    @endphp
+
+                    @foreach($faqs as $index => $faq)
+                        <div class="faq-card {{ $index === 0 ? 'bg-white border-emerald-500 shadow-md' : 'bg-slate-50 border-slate-200/90 shadow-xs' }} hover:bg-white rounded-2xl border transition-all duration-300 overflow-hidden" id="faq-card-{{ $index }}">
+                            <button type="button" 
+                                    onclick="toggleFaq({{ $index }})" 
+                                    class="w-full py-5 px-6 sm:px-7 text-left flex items-start justify-between gap-4 focus:outline-none transition"
+                                    id="faq-btn-{{ $index }}">
+                                <div class="flex items-start space-x-3.5">
+                                    <span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-emerald-100 text-emerald-800 font-black text-xs flex-shrink-0 mt-0.5">
+                                        {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
+                                    </span>
+                                    <div>
+                                        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 block mb-0.5">
+                                            {{ $faq['badge'] }}
+                                        </span>
+                                        <h3 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+                                            {{ $faq['q'] }}
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-8 h-8 rounded-full border flex items-center justify-center transition-transform duration-300 shadow-xs {{ $index === 0 ? 'rotate-180 bg-emerald-600 text-white border-emerald-600' : 'bg-white text-slate-500 border-slate-200' }}" id="faq-icon-{{ $index }}">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <!-- Accordion Body -->
+                            <div id="faq-answer-{{ $index }}" class="{{ $index === 0 ? '' : 'hidden' }} transition-all duration-300 ease-in-out">
+                                <div class="px-6 sm:px-7 pb-6 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 bg-white/70">
+                                    <p class="pt-2">
+                                        {{ $faq['a'] }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 9. CALL TO ACTION / QUICK INQUIRY BANNER -->
     @php
         $ctaBg = isset($siteImages['cta_banner']) ? $siteImages['cta_banner']->url : 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80';
     @endphp
@@ -628,4 +755,43 @@
     </section>
 
 @endsection
+
+@push('scripts')
+<script>
+    function toggleFaq(index) {
+        const answer = document.getElementById('faq-answer-' + index);
+        const icon = document.getElementById('faq-icon-' + index);
+        const card = document.getElementById('faq-card-' + index);
+        if (!answer) return;
+
+        const isCurrentlyOpen = !answer.classList.contains('hidden');
+
+        // Close all other FAQs
+        document.querySelectorAll('[id^="faq-answer-"]').forEach((el) => {
+            el.classList.add('hidden');
+        });
+        document.querySelectorAll('[id^="faq-icon-"]').forEach((el) => {
+            el.classList.remove('rotate-180', 'bg-emerald-600', 'text-white', 'border-emerald-600');
+            el.classList.add('bg-white', 'text-slate-500', 'border-slate-200');
+        });
+        document.querySelectorAll('[id^="faq-card-"]').forEach((el) => {
+            el.classList.remove('border-emerald-500', 'bg-white', 'shadow-md');
+            el.classList.add('border-slate-200/90', 'bg-slate-50');
+        });
+
+        // Toggle open if closed
+        if (!isCurrentlyOpen) {
+            answer.classList.remove('hidden');
+            if (icon) {
+                icon.classList.add('rotate-180', 'bg-emerald-600', 'text-white', 'border-emerald-600');
+                icon.classList.remove('bg-white', 'text-slate-500', 'border-slate-200');
+            }
+            if (card) {
+                card.classList.add('border-emerald-500', 'bg-white', 'shadow-md');
+                card.classList.remove('border-slate-200/90', 'bg-slate-50');
+            }
+        }
+    }
+</script>
+@endpush
 
