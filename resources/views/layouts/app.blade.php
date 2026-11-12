@@ -26,7 +26,10 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-600 selection:text-white flex flex-col min-h-screen">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-600 selection:text-white flex flex-col min-h-screen relative">
+
+    <!-- Framer Motion Reading & Scroll Progress Bar -->
+    <div id="scroll-progress-bar" class="fixed top-0 left-0 right-0 h-1 sm:h-1.5 bg-gradient-to-r from-emerald-500 via-teal-400 to-amber-500 origin-left z-[9999] pointer-events-none transform scale-x-0"></div>
 
     <!-- 1. Top Bar (Dark Charcoal/Slate) -->
     <div class="bg-brand-topbar text-slate-300 text-xs py-2 px-4 sm:px-8 border-b border-slate-800">

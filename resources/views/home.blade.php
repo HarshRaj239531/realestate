@@ -72,7 +72,7 @@
     </section>
 
     <!-- 2. INTERACTIVE PROPERTY SEARCH WIDGET (Overlapping bottom hero) -->
-    <section class="max-w-6xl mx-auto px-4 -mt-10 relative z-20">
+    <section class="max-w-6xl mx-auto px-4 -mt-10 relative z-20" data-motion="fade-up">
         <div class="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 border border-slate-100">
             <form method="GET" action="{{ route('properties.index') }}" class="space-y-4">
                 
@@ -152,7 +152,7 @@
 
     <!-- 3. FEATURED ECO-FRIENDLY PROPERTIES SECTION -->
     <section id="properties-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12" data-motion="fade-up">
             <div>
                 <div class="inline-flex items-center space-x-1.5 text-xs font-bold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full uppercase tracking-wider">
                     <span>🌿 Sustainable Living</span>
@@ -174,7 +174,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-motion-stagger>
             @foreach($featuredProperties as $prop)
                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col group">
                     <!-- Image Box -->
@@ -275,7 +275,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 
-                <div class="space-y-6">
+                <div class="space-y-6" data-motion="fade-left">
                     <span class="inline-flex items-center text-xs font-bold uppercase tracking-wider bg-emerald-800 text-emerald-300 px-3 py-1 rounded-full border border-emerald-700">
                         Why We Build Green
                     </span>
@@ -319,7 +319,7 @@
                     </div>
                 </div>
 
-                <div class="relative">
+                <div class="relative" data-motion="fade-right">
                     <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-emerald-700/40">
                         <img src="{{ $ecoImg }}" alt="Eco Friendly Living" class="w-full h-[450px] object-cover">
                     </div>
@@ -335,7 +335,7 @@
 
     <!-- 5. GALLERY HIGHLIGHT SECTION (Replacing Blog & News per user request) -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12" data-motion="fade-up">
             <div>
                 <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">Visual Showcase</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Architecture & Project Gallery</h2>
@@ -351,7 +351,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" data-motion-stagger>
             @foreach($galleryItems as $item)
                 <div class="group relative rounded-2xl overflow-hidden shadow-md h-72 bg-slate-900">
                     <img src="{{ $item->image_url }}" alt="{{ $item->title }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
@@ -382,7 +382,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <!-- Section Header -->
-            <div class="text-center max-w-3xl mx-auto mb-14">
+            <div class="text-center max-w-3xl mx-auto mb-14" data-motion="fade-up">
                 <span class="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.28em] text-amber-700">
                     EXPERTS BEHIND {{ $siteSettings['brand_name'] ?? 'S.K.' }}
                 </span>
@@ -418,7 +418,7 @@
                 ];
             @endphp
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8" data-motion-stagger>
                 @foreach($teamMembers as $member)
                     <div class="group text-center flex flex-col">
                         <!-- Portrait Box -->
@@ -453,7 +453,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
             <!-- Section Header (Matching Reference Image Typography with Project Styling) -->
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-motion="fade-up">
                 <span class="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.28em] text-amber-700">
                     WHAT OUR CLIENTS SAY
                 </span>
@@ -512,7 +512,7 @@
                 ];
             @endphp
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch" data-motion-stagger>
                 @foreach($clientReviews as $review)
                     <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-2xl transition-all duration-300 border-t-4 {{ $review['top_border'] }} border-x border-b border-slate-200/80 flex flex-col justify-between relative group {{ $review['is_featured'] ? 'lg:-translate-y-3 ring-2 ring-amber-500/25 shadow-xl' : '' }}">
                         
@@ -605,7 +605,7 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
             <!-- Section Header -->
-            <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
+            <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-14" data-motion="fade-up">
                 <span class="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.28em] text-amber-700">
                     FREQUENTLY ASKED QUESTIONS
                 </span>
@@ -645,7 +645,7 @@
                 ];
             @endphp
 
-            <div class="space-y-3.5">
+            <div class="space-y-3.5" data-motion-stagger>
                 @foreach($faqs as $index => $faq)
                     <div class="faq-card bg-white border {{ $index === 0 ? 'border-amber-500/70 shadow-sm' : 'border-slate-200' }} hover:border-slate-300 transition-all duration-300 rounded-sm overflow-hidden" 
                          id="faq-card-{{ $index }}">
@@ -704,7 +704,7 @@
     @endphp
     <section class="relative py-20 bg-cover bg-center overflow-hidden" 
              style="background-image: linear-gradient(rgba(24, 32, 45, 0.90), rgba(24, 32, 45, 0.90)), url('{{ $ctaBg }}');">
-        <div class="max-w-5xl mx-auto px-4 text-center text-white space-y-6">
+        <div class="max-w-5xl mx-auto px-4 text-center text-white space-y-6" data-motion="zoom-in">
             <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/60 border border-emerald-500/40 px-3.5 py-1.5 rounded-full">
                 Begin Your Journey
             </span>

@@ -83,3 +83,20 @@
 
 /* Smooth modal transitions */
 [x-cloak] { display: none !important; }
+
+/* Framer Motion / Motion One Scroll Optimizations */
+html.js-motion-ready [data-motion],
+html.js-motion-ready [data-motion-stagger] > * {
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-motion],
+    [data-motion-stagger] > * {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
