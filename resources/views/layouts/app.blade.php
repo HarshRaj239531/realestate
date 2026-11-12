@@ -136,11 +136,6 @@
                 </button>
             </div>
         </div>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
 
         <!-- Mobile Drawer -->
         <div id="mobileMenu" class="hidden lg:hidden bg-emerald-900 text-white px-6 py-4 space-y-3 border-t border-emerald-700">
@@ -162,35 +157,37 @@
         </div>
     </header>
 
-    <!-- Global Alert / Flash Messages -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-3 w-full">
-        @if (session('success'))
-            <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-md shadow-sm mb-3 flex items-center justify-between">
-                <div class="flex items-center space-x-3 text-emerald-800 text-sm font-medium">
-                    <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span>{{ session('success') }}</span>
+    <!-- Global Alert / Flash Messages (Only shown when messages exist) -->
+    @if (session('success') || session('error'))
+        <div class="fixed top-20 right-6 z-50 max-w-md w-full animate-fadeIn">
+            @if (session('success'))
+                <div class="bg-emerald-900 text-white p-4 rounded-xl shadow-2xl mb-3 flex items-center justify-between border border-emerald-500">
+                    <div class="flex items-center space-x-3 text-sm font-medium">
+                        <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>{{ session('success') }}</span>
+                    </div>
+                    <button onclick="this.parentElement.remove()" class="text-emerald-300 hover:text-white">&times;</button>
                 </div>
-                <button onclick="this.parentElement.remove()" class="text-emerald-600 hover:text-emerald-900">&times;</button>
-            </div>
-        @endif
+            @endif
 
-        @if (session('error'))
-            <div class="bg-rose-50 border-l-4 border-rose-500 p-4 rounded-md shadow-sm mb-3 flex items-center justify-between">
-                <div class="flex items-center space-x-3 text-rose-800 text-sm font-medium">
-                    <svg class="w-5 h-5 text-rose-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
-                    </svg>
-                    <span>{{ session('error') }}</span>
+            @if (session('error'))
+                <div class="bg-rose-900 text-white p-4 rounded-xl shadow-2xl mb-3 flex items-center justify-between border border-rose-500">
+                    <div class="flex items-center space-x-3 text-sm font-medium">
+                        <svg class="w-5 h-5 text-rose-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>{{ session('error') }}</span>
+                    </div>
+                    <button onclick="this.parentElement.remove()" class="text-rose-300 hover:text-white">&times;</button>
                 </div>
-                <button onclick="this.parentElement.remove()" class="text-rose-600 hover:text-rose-900">&times;</button>
-            </div>
-        @endif
-    </div>
+            @endif
+        </div>
+    @endif
 
-    <!-- Main Content Slot -->
-    <main class="flex-grow">
+    <!-- Main Content Slot (Zero Gap directly below header) -->
+    <main class="flex-grow p-0 m-0">
         @yield('content')
     </main>
 
