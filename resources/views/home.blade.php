@@ -484,7 +484,7 @@
                         'avatar_bg' => 'bg-slate-900 text-white',
                         'tag_color' => 'bg-emerald-50 text-emerald-800 border-emerald-200/60',
                         'highlight' => 'Zero Brokerage Deal',
-                        'quote' => ($siteSettings['brand_name'] ?? 'S.K. Infratech') . ' se deal karna bohot smooth tha. Unhone registry ke har step par mera sath diya. Zero brokerage ne mera ₹80,000 bachaya.',
+                        'quote' => 'Dealing with ' . ($siteSettings['brand_name'] ?? 'S.K. Infratech') . ' was remarkably seamless. They guided me through every step of the legal registry. Their zero-brokerage model saved me ₹80,000 while ensuring completely transparent legal possession.',
                         'is_featured' => false,
                     ],
                     [
@@ -495,7 +495,7 @@
                         'avatar_bg' => 'bg-amber-600 text-white shadow-amber-500/30',
                         'tag_color' => 'bg-amber-50 text-amber-900 border-amber-200/70',
                         'highlight' => 'Verified Quick Sale',
-                        'quote' => 'I needed urgent money for my business and wanted to sell my plot. S.K. Team visited the site within 2 hours and gave me the token amount the next morning. Impressed!',
+                        'quote' => 'I needed urgent liquidity for my business and wanted to sell my plot. Their site team visited within 2 hours and handed over the token advance the next morning. Fair valuation and absolute integrity!',
                         'is_featured' => true,
                     ],
                     [
@@ -506,7 +506,7 @@
                         'avatar_bg' => 'bg-slate-900 text-white',
                         'tag_color' => 'bg-slate-100 text-slate-800 border-slate-200',
                         'highlight' => 'Legal Peace of Mind',
-                        'quote' => 'Documentation was my biggest fear in West UP property. But inki team ne 30 saal ki chain check karwa ke di. Pure legal peace of mind.',
+                        'quote' => 'Title documentation was my biggest concern when investing in property. But their legal department thoroughly verified 30 years of chain title deeds and revenue records. Pure legal peace of mind.',
                         'is_featured' => false,
                     ],
                 ];
@@ -600,128 +600,99 @@
         </div>
     </section>
 
-    <!-- 8. FREQUENTLY ASKED QUESTIONS (FAQ ACCORDION SECTION) -->
-    <section class="py-20 bg-white border-t border-slate-100 relative overflow-hidden" id="faq-section">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- 8. FREQUENTLY ASKED QUESTIONS (FAQ ACCORDION SECTION - MATCHING REFERENCE DESIGN) -->
+    <section class="py-20 bg-slate-50/60 border-t border-slate-200/70 relative overflow-hidden" id="faq-section">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                
-                <!-- Left Column: Sticky Title & Quick Contact Card (4 cols) -->
-                <div class="lg:col-span-4 lg:sticky lg:top-28 space-y-6">
-                    <div>
-                        <span class="inline-flex items-center space-x-1.5 text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/90 px-3.5 py-1.5 rounded-full border border-emerald-200">
-                            <span>💡 Knowledge Base</span>
-                            <span class="text-emerald-500">•</span>
-                            <span>Transparent Guidance</span>
-                        </span>
-                        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-3 leading-tight">
-                            Frequently Asked Questions
-                        </h2>
-                        <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-                            Clear, honest answers about property legalities, registry, zero-brokerage savings, and eco-certified sustainable living.
-                        </p>
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
+                <span class="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.28em] text-amber-700">
+                    FREQUENTLY ASKED QUESTIONS
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-2.5">
+                    CLARITY & LEGAL PEACE OF MIND
+                </h2>
+                <div class="w-12 h-1 bg-amber-500/60 mx-auto mt-3.5 rounded-full"></div>
+            </div>
+
+            <!-- Single Column Accordion List (Matching User Reference Image Exactly) -->
+            @php
+                $faqs = [
+                    [
+                        'q' => 'ARE THE PROPERTY TITLES AND DOCUMENTS 100% GUARANTEED?',
+                        'a' => 'Every property in our verified inventory is directly acquired and legally vetted by our senior counsel. We conduct exhaustive 30-year chain title searches, revenue mutation checks, and encumbrance inspections before offering any listing. You are always welcome to request document copies for independent verification with your own lawyer.',
+                    ],
+                    [
+                        'q' => 'WHAT IF AN ISSUE ARISES DURING THE REGISTRY PROCESS?',
+                        'a' => 'Our in-house legal team assists you in person at the Sub-Registrar and Tehsil office from Day 1 through final physical possession. In the rare event of any unresolvable title defect or dispute, we provide a 100% token refund guarantee in writing.',
+                    ],
+                    [
+                        'q' => 'CAN THE PROPERTY PRICE BE NEGOTIATED?',
+                        'a' => 'All our pricing is direct-from-owner with zero third-party middleman and zero brokerage commission. While our quoted prices are highly competitive, our sales directors offer reasonable flexibility on payment milestones and token terms during in-person discussions.',
+                    ],
+                    [
+                        'q' => 'WHAT PAYMENT MODES AND SCHEDULES ARE ACCEPTED?',
+                        'a' => 'We accept payments through Cheque, RTGS, NEFT, Net Banking, and pre-approved Bank Home Loans. All transactions are officially recorded with government stamp duty receipts for absolute financial compliance and security.',
+                    ],
+                    [
+                        'q' => 'HOW CAN I INDEPENDENTLY VERIFY THE REGISTRY STATUS?',
+                        'a' => 'We provide certified hard copies of the Khasra number, Revenue Khatauni, Encumbrance Certificate (EC), and Tehsil records directly retrieved from the official government land registry portal for your independent legal vetting.',
+                    ],
+                    [
+                        'q' => 'DO YOU ACQUIRE RESIDENTIAL AND AGRICULTURAL LAND IN DELHI NCR & WEST UP?',
+                        'a' => 'Yes. If your land parcel holds a clean freehold title, direct road access, and clear revenue demarcations, our acquisition team conducts an on-site inspection within 24 to 48 hours to propose a fair market valuation and token advance.',
+                    ],
+                ];
+            @endphp
+
+            <div class="space-y-3.5">
+                @foreach($faqs as $index => $faq)
+                    <div class="faq-card bg-white border {{ $index === 0 ? 'border-amber-500/70 shadow-sm' : 'border-slate-200' }} hover:border-slate-300 transition-all duration-300 rounded-sm overflow-hidden" 
+                         id="faq-card-{{ $index }}">
+                        
+                        <!-- Accordion Header Button -->
+                        <button type="button" 
+                                onclick="toggleFaqSmooth({{ $index }})" 
+                                class="w-full py-4 sm:py-5 px-5 sm:px-8 text-left flex items-center justify-between gap-4 focus:outline-none transition group cursor-pointer"
+                                id="faq-btn-{{ $index }}">
+                            <span class="text-xs sm:text-sm font-black text-slate-900 tracking-wider uppercase group-hover:text-amber-600 transition">
+                                {{ $faq['q'] }}
+                            </span>
+                            <span class="flex-shrink-0 text-amber-500 font-bold text-2xl leading-none inline-block origin-center transform transition-transform duration-300 ease-out select-none {{ $index === 0 ? 'rotate-45 text-amber-600' : 'rotate-0' }}" 
+                                  id="faq-icon-{{ $index }}">
+                                +
+                            </span>
+                        </button>
+
+                        <!-- Smooth Animated Collapsible Container via CSS Grid Transition -->
+                        <div id="faq-collapse-{{ $index }}" 
+                             class="grid transition-[grid-template-rows] duration-300 ease-out" 
+                             style="grid-template-rows: {{ $index === 0 ? '1fr' : '0fr' }};">
+                            <div class="overflow-hidden">
+                                <div class="px-5 sm:px-8 pb-5 pt-2 border-t border-slate-100 bg-slate-50/40 text-slate-600 text-xs sm:text-sm leading-relaxed italic">
+                                    <p>{{ $faq['a'] }}</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+                @endforeach
+            </div>
 
-                    <!-- Quick Support Card -->
-                    <div class="bg-gradient-to-br from-slate-900 to-brand-topbar text-white p-6 rounded-2xl shadow-xl border border-slate-800 space-y-4">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-lg">
-                                💬
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-sm text-white">Have a specific question?</h4>
-                                <p class="text-xs text-slate-400">Our legal & property advisors are online.</p>
-                            </div>
-                        </div>
-
-                        <div class="space-y-2 pt-2">
-                            <a href="tel:{{ $siteSettings['contact_phone'] ?? '+919876543210' }}" class="w-full py-2.5 px-4 bg-white/10 hover:bg-white/20 text-white font-bold text-xs rounded-xl transition flex items-center justify-center space-x-2 border border-white/10">
-                                <span>📞 Call: {{ $siteSettings['contact_phone'] ?? '+91 98765 43210' }}</span>
-                            </a>
-                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $siteSettings['contact_phone'] ?? '+919876543210') }}?text={{ urlencode('Hello, I have an inquiry about your properties.') }}" target="_blank" class="w-full py-2.5 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition flex items-center justify-center space-x-2 shadow-md">
-                                <span>💬 Chat on WhatsApp</span>
-                            </a>
-                        </div>
-                    </div>
+            <!-- Bottom Still Have Questions Bar -->
+            <div class="mt-12 text-center p-6 bg-white rounded-xl border border-slate-200/80 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="text-left">
+                    <h4 class="text-sm font-bold text-slate-900">Still have a question or need document copies?</h4>
+                    <p class="text-xs text-slate-500 mt-0.5">Our legal counsel and sales specialists respond within minutes.</p>
                 </div>
-
-                <!-- Right Column: Interactive FAQ Accordions (8 cols) -->
-                <div class="lg:col-span-8 space-y-4">
-                    @php
-                        $faqs = [
-                            [
-                                'q' => 'How do you guarantee 100% legal title verification and clean registry?',
-                                'a' => 'Every single plot, villa, and apartment listed with us undergoes an exhaustive 30-year chain title search conducted by our senior property advocates. We verify government revenue records, encumbrance certificates (EC), mutation entries, and local authority master-plan zoning before offering any property. Registry and stamp duty documentation are fully assisted by our in-house legal desk at zero brokerage fees.',
-                                'badge' => 'Legal & Registry',
-                            ],
-                            [
-                                'q' => 'What makes these homes eco-friendly, and how much can I save on power bills?',
-                                'a' => 'Our homes feature integrated rooftop on-grid solar photovoltaic systems, rainwater percolation recharge wells, double-glazed insulated windows, and thermal fly-ash brick masonry. Homeowners typically experience a 55% to 70% reduction in monthly electricity bills, alongside uninterrupted 24/7 backup and dual-plumbing greywater reuse for gardens.',
-                                'badge' => 'Sustainability & Savings',
-                            ],
-                            [
-                                'q' => 'Are site visits completely free of cost, and how do I schedule one?',
-                                'a' => 'Yes, 100% complimentary site visits are provided across Delhi NCR, Gurugram, and West UP. We arrange air-conditioned doorstep pickup and an on-site walkthrough guided by a senior property specialist who explains plot dimensions, sunlight orientation, structural floorplans, and sample show-villas.',
-                                'badge' => 'Complimentary Site Visit',
-                            ],
-                            [
-                                'q' => 'Are your properties pre-approved for bank home loans?',
-                                'a' => 'Yes, all our developments are pre-sanctioned and approved by leading nationalized and private financial institutions, including SBI, HDFC Bank, ICICI Bank, and PNB Housing. We assist you with doorstep loan document collection, quick technical valuation, and fast-track disbursals at competitive interest rates.',
-                                'badge' => 'Home Loans (SBI / HDFC)',
-                            ],
-                            [
-                                'q' => 'Is there any hidden brokerage or service commission on purchases?',
-                                'a' => 'No. We follow a strict Direct-to-Owner / Direct-to-Developer policy. Buyers pay exactly ₹0 in brokerage fees. You receive a complete cost breakdown upfront—including basic selling price, parking, PLC (Preferential Location Charges), and approximate government stamp duty—with zero hidden surprises.',
-                                'badge' => 'Zero Brokerage Guarantee',
-                            ],
-                            [
-                                'q' => 'Can you help me sell or lease my property in the future?',
-                                'a' => 'Absolutely. We maintain a dedicated Secondary Resale & Leasing desk. Should you wish to liquidate your investment or find high-yield corporate tenants, our sales network connects you with verified buyers and provides fair market valuation with fast token settlements.',
-                                'badge' => 'Resale & Liquidity Desk',
-                            ],
-                        ];
-                    @endphp
-
-                    @foreach($faqs as $index => $faq)
-                        <div class="faq-card {{ $index === 0 ? 'bg-white border-emerald-500 shadow-md' : 'bg-slate-50 border-slate-200/90 shadow-xs' }} hover:bg-white rounded-2xl border transition-all duration-300 overflow-hidden" id="faq-card-{{ $index }}">
-                            <button type="button" 
-                                    onclick="toggleFaq({{ $index }})" 
-                                    class="w-full py-5 px-6 sm:px-7 text-left flex items-start justify-between gap-4 focus:outline-none transition"
-                                    id="faq-btn-{{ $index }}">
-                                <div class="flex items-start space-x-3.5">
-                                    <span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-emerald-100 text-emerald-800 font-black text-xs flex-shrink-0 mt-0.5">
-                                        {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
-                                    </span>
-                                    <div>
-                                        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 block mb-0.5">
-                                            {{ $faq['badge'] }}
-                                        </span>
-                                        <h3 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
-                                            {{ $faq['q'] }}
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="flex-shrink-0 mt-1">
-                                    <div class="w-8 h-8 rounded-full border flex items-center justify-center transition-transform duration-300 shadow-xs {{ $index === 0 ? 'rotate-180 bg-emerald-600 text-white border-emerald-600' : 'bg-white text-slate-500 border-slate-200' }}" id="faq-icon-{{ $index }}">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </button>
-
-                            <!-- Accordion Body -->
-                            <div id="faq-answer-{{ $index }}" class="{{ $index === 0 ? '' : 'hidden' }} transition-all duration-300 ease-in-out">
-                                <div class="px-6 sm:px-7 pb-6 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 bg-white/70">
-                                    <p class="pt-2">
-                                        {{ $faq['a'] }}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+                <div class="flex items-center space-x-3 flex-shrink-0">
+                    <a href="tel:{{ $siteSettings['contact_phone'] ?? '+919876543210' }}" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-lg transition flex items-center space-x-1.5">
+                        <span>📞 Call Now</span>
+                    </a>
+                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $siteSettings['contact_phone'] ?? '+919876543210') }}?text={{ urlencode('Hello, I want to verify property documents.') }}" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-lg transition flex items-center space-x-1.5 shadow-sm">
+                        <span>💬 WhatsApp</span>
+                    </a>
                 </div>
-
             </div>
 
         </div>
@@ -758,37 +729,37 @@
 
 @push('scripts')
 <script>
-    function toggleFaq(index) {
-        const answer = document.getElementById('faq-answer-' + index);
+    function toggleFaqSmooth(index) {
+        const collapse = document.getElementById('faq-collapse-' + index);
         const icon = document.getElementById('faq-icon-' + index);
         const card = document.getElementById('faq-card-' + index);
-        if (!answer) return;
+        if (!collapse) return;
 
-        const isCurrentlyOpen = !answer.classList.contains('hidden');
+        const isOpen = collapse.style.gridTemplateRows === '1fr';
 
         // Close all other FAQs
-        document.querySelectorAll('[id^="faq-answer-"]').forEach((el) => {
-            el.classList.add('hidden');
+        document.querySelectorAll('[id^="faq-collapse-"]').forEach((el) => {
+            el.style.gridTemplateRows = '0fr';
         });
         document.querySelectorAll('[id^="faq-icon-"]').forEach((el) => {
-            el.classList.remove('rotate-180', 'bg-emerald-600', 'text-white', 'border-emerald-600');
-            el.classList.add('bg-white', 'text-slate-500', 'border-slate-200');
+            el.classList.remove('rotate-45', 'text-amber-600');
+            el.classList.add('rotate-0', 'text-amber-500');
         });
         document.querySelectorAll('[id^="faq-card-"]').forEach((el) => {
-            el.classList.remove('border-emerald-500', 'bg-white', 'shadow-md');
-            el.classList.add('border-slate-200/90', 'bg-slate-50');
+            el.classList.remove('border-amber-500/70', 'shadow-sm');
+            el.classList.add('border-slate-200');
         });
 
-        // Toggle open if closed
-        if (!isCurrentlyOpen) {
-            answer.classList.remove('hidden');
+        // If it was closed, open it smoothly
+        if (!isOpen) {
+            collapse.style.gridTemplateRows = '1fr';
             if (icon) {
-                icon.classList.add('rotate-180', 'bg-emerald-600', 'text-white', 'border-emerald-600');
-                icon.classList.remove('bg-white', 'text-slate-500', 'border-slate-200');
+                icon.classList.remove('rotate-0', 'text-amber-500');
+                icon.classList.add('rotate-45', 'text-amber-600');
             }
             if (card) {
-                card.classList.add('border-emerald-500', 'bg-white', 'shadow-md');
-                card.classList.remove('border-slate-200/90', 'bg-slate-50');
+                card.classList.remove('border-slate-200');
+                card.classList.add('border-amber-500/70', 'shadow-sm');
             }
         }
     }
