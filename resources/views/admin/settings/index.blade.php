@@ -22,9 +22,13 @@
                 </p>
             </div>
             <div class="shrink-0 flex items-center space-x-3">
-                <div class="px-3.5 py-2 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-600 flex items-center space-x-2">
+                <button type="button" onclick="openSettingsDrawer()" class="px-4 py-2 bg-purple-50 hover:bg-purple-100 text-purple-700 text-xs font-extrabold rounded-xl transition border border-purple-200 flex items-center space-x-1.5 shadow-2xs">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    <span>Open in Slide Drawer</span>
+                </button>
+                <div class="px-3.5 py-2 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-600 flex items-center space-x-2 hidden sm:flex">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span>Live Propagation Active</span>
+                    <span>Live Auto-Sync</span>
                 </div>
             </div>
         </div>

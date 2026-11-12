@@ -18,7 +18,7 @@ class SettingController extends Controller
         return view('admin.settings.index', compact('settings'));
     }
 
-    public function update(Request $request): RedirectResponse
+    public function update(Request $request): RedirectResponse|\Illuminate\Http\JsonResponse
     {
         $data = $request->except(['_token']);
 
@@ -31,6 +31,13 @@ class SettingController extends Controller
                 ]
             );
             Cache::forget("site_setting_{$key}");
+        }
+
+        if ($request->wantsJson() || $request->ajax()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Settings saved successfully! Changes are live across the website.',
+            ]);
         }
 
         return back()->with('success', 'Site settings and brand configurations have been saved successfully!');

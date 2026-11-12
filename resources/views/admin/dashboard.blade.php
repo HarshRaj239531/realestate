@@ -180,8 +180,8 @@
                 </div>
             </div>
             <div class="pt-5 mt-4 border-t border-slate-100">
-                <a href="{{ route('admin.settings.index') }}" class="text-xs font-black text-emerald-700 group-hover:text-emerald-800 flex items-center space-x-1">
-                    <span>Open Master Settings</span>
+                <a href="{{ route('admin.settings.index') }}" onclick="event.preventDefault(); openSettingsDrawer();" class="text-xs font-black text-emerald-700 group-hover:text-emerald-800 flex items-center space-x-1">
+                    <span>Open Master Settings (Side Drawer)</span>
                     <span>&rarr;</span>
                 </a>
             </div>

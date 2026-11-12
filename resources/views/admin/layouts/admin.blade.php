@@ -128,6 +128,7 @@
                 <div class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest px-3 mb-2">Master Controls</div>
                 
                 <a href="{{ route('admin.settings.index') }}" 
+                   onclick="event.preventDefault(); openSettingsDrawer();"
                    class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl transition duration-150 {{ request()->routeIs('admin.settings.*') ? 'bg-emerald-50/90 text-emerald-900 font-bold border border-emerald-200 shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50' }}">
                     <svg class="w-4 h-4 {{ request()->routeIs('admin.settings.*') ? 'text-purple-600' : 'text-slate-400' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
@@ -199,7 +200,9 @@
                     </svg>
                     <span>View Site</span>
                 </a>
-                <a href="{{ route('admin.settings.index') }}" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200/80 text-slate-700 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 border border-slate-200">
+                <a href="{{ route('admin.settings.index') }}" 
+                   onclick="event.preventDefault(); openSettingsDrawer();"
+                   class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200/80 text-slate-700 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 border border-slate-200">
                     <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
                     </svg>
@@ -237,6 +240,9 @@
             @yield('content')
         </main>
     </div>
+
+    <!-- Global Slide-Over Settings Drawer Component -->
+    @include('admin.partials.settings-drawer')
 
 </body>
 </html>
