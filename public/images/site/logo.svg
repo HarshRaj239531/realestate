@@ -1,39 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="280" height="80">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 84" width="320" height="84">
   <defs>
-    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#34d399" />
-      <stop offset="100%" stop-color="#059669" />
+    <linearGradient id="brandBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#1d4ed8" />
     </linearGradient>
-    <linearGradient id="navyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1e293b" />
-      <stop offset="100%" stop-color="#0f172a" />
+    <linearGradient id="brandGreenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#2f9049" />
     </linearGradient>
   </defs>
 
-  <!-- Architectural Luxury Home Icon -->
-  <g transform="translate(18, 14)">
-    <!-- Roof Peak -->
-    <path d="M 26,4 L 48,22 L 42,22 L 26,9 L 10,22 L 4,22 Z" fill="url(#emeraldGrad)" />
-    <!-- Chimney / Modern accent line -->
-    <rect x="36" y="8" width="4" height="8" fill="#10b981" rx="1" />
-    <!-- Building Pillars & Eco Arch -->
-    <rect x="8" y="25" width="6" height="24" rx="2" fill="url(#navyGrad)" />
-    <rect x="18" y="25" width="6" height="24" rx="2" fill="url(#navyGrad)" />
-    <rect x="28" y="25" width="6" height="24" rx="2" fill="url(#navyGrad)" />
-    <rect x="38" y="25" width="6" height="24" rx="2" fill="url(#navyGrad)" />
-    <!-- Base Foundation bar -->
-    <rect x="4" y="51" width="44" height="4" rx="2" fill="url(#emeraldGrad)" />
-    <!-- Central Leaf Symbol -->
-    <path d="M 26,17 C 32,23 31,31 26,35 C 21,31 20,23 26,17 Z" fill="#10b981" opacity="0.9" />
+  <!-- Circular Architectural Emblem matching reference style -->
+  <g transform="translate(14, 10)">
+    <!-- Outer stylized circle with gap -->
+    <circle cx="32" cy="32" r="28" fill="none" stroke="url(#brandBlueGrad)" stroke-width="6.5" stroke-linecap="round" stroke-dasharray="140 35" transform="rotate(-30 32 32)" />
+    
+    <!-- Modern Villa Roof Peak & Pillar inside emblem -->
+    <path d="M 32,15 L 46,28 L 41,28 L 32,20 L 23,28 L 18,28 Z" fill="url(#brandGreenGrad)" />
+    <path d="M 24,31 L 28,31 L 28,45 L 24,45 Z" fill="#0f172a" />
+    <path d="M 36,31 L 40,31 L 40,45 L 36,45 Z" fill="#0f172a" />
+    <!-- Horizontal foundation line -->
+    <rect x="20" y="46" width="24" height="3" rx="1.5" fill="url(#brandBlueGrad)" />
+    <!-- Center Eco Leaf Accent -->
+    <path d="M 32,26 C 36,30 35,36 32,39 C 29,36 28,30 32,26 Z" fill="#10b981" />
   </g>
 
-  <!-- Typography -->
-  <g transform="translate(80, 42)">
-    <text x="0" y="0" font-family="'Instrument Sans', 'Montserrat', 'Inter', system-ui, sans-serif" font-weight="900" font-size="26" letter-spacing="-0.5" fill="#0f172a">
+  <!-- High-End Typography -->
+  <g transform="translate(86, 46)">
+    <!-- Main Brand Name -->
+    <text x="0" y="0" font-family="'Instrument Sans', 'Montserrat', 'Inter', system-ui, sans-serif" font-weight="900" font-size="27" letter-spacing="-0.3" fill="#0f172a">
       Real<tspan fill="#2f9049">Estate</tspan>
     </text>
-    <text x="2" y="18" font-family="'Instrument Sans', system-ui, sans-serif" font-weight="700" font-size="9" letter-spacing="3.5" fill="#64748b">
-      LUXURY &amp; ECO LIVING
+    <!-- Tagline in Reference Style -->
+    <text x="2" y="19" font-family="'Instrument Sans', system-ui, sans-serif" font-weight="800" font-size="9" letter-spacing="3.8" fill="#0284c7">
+      ECO LUXURY LIVING
     </text>
   </g>
 </svg>

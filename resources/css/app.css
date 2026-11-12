@@ -59,13 +59,17 @@
     color: var(--brand-primary);
 }
 
-/* Angled cut badge for the logo matching the design */
+/* Angled cut badge for the logo matching the design with stylish blue accent border */
 .clip-logo-badge {
     clip-path: polygon(0 0, calc(100% - 38px) 0, 100% 100%, 0 100%);
 }
 
+.clip-logo-badge-accent {
+    clip-path: polygon(0 0, calc(100% - 38px) 0, 100% 100%, 0 100%);
+}
+
 @media (max-width: 640px) {
-    .clip-logo-badge {
+    .clip-logo-badge, .clip-logo-badge-accent {
         clip-path: none;
     }
 }
