@@ -75,3 +75,4 @@ class SiteImageController extends Controller
         return back()->with('success', "'{$image->title}' updated successfully! New image is now live on the website.");
     }
 }
+

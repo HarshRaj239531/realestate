@@ -24,3 +24,4 @@ class Inquiry extends Model
         return $this->belongsTo(Property::class);
     }
 }
+

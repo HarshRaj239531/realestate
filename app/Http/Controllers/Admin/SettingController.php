@@ -30,3 +30,4 @@ class SettingController extends Controller
         return back()->with('success', 'Site settings and brand theme colors have been updated successfully!');
     }
 }
+

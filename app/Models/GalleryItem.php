@@ -42,3 +42,4 @@ class GalleryItem extends Model
         return Storage::url($this->image_path);
     }
 }
+

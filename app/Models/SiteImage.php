@@ -47,3 +47,4 @@ class SiteImage extends Model
         });
     }
 }
+

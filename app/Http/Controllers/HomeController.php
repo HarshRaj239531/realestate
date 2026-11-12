@@ -40,3 +40,4 @@ class HomeController extends Controller
         return view('home', compact('featuredProperties', 'latestProperties', 'galleryItems', 'cities'));
     }
 }
+

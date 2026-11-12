@@ -28,3 +28,4 @@ class EnsureUserIsAdmin
         return $next($request);
     }
 }
+

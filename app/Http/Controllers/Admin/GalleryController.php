@@ -62,3 +62,4 @@ class GalleryController extends Controller
         return back()->with('success', 'Gallery item deleted successfully.');
     }
 }
+

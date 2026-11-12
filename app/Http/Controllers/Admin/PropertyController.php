@@ -198,3 +198,4 @@ class PropertyController extends Controller
         return back()->with('success', "Property '{$property->title}' has been {$status}.");
     }
 }
+

@@ -63,3 +63,4 @@ class AdminAuthController extends Controller
             ->with('info', 'You have been successfully logged out of the Admin Panel.');
     }
 }
+

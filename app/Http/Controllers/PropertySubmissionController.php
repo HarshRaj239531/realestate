@@ -84,3 +84,4 @@ class PropertySubmissionController extends Controller
             ->with('success', 'Your property has been listed successfully! Thank you for choosing AG Homes.');
     }
 }
+

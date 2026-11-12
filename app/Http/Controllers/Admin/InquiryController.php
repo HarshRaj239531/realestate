@@ -53,3 +53,4 @@ class InquiryController extends Controller
         return back()->with('success', 'Inquiry deleted successfully.');
     }
 }
+

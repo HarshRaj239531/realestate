@@ -98,3 +98,4 @@ class PropertyController extends Controller
         return view('properties.show', compact('property', 'similarProperties'));
     }
 }
+

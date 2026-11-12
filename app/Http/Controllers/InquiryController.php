@@ -37,3 +37,4 @@ class InquiryController extends Controller
         return back()->with('success', 'Thank you! Your inquiry has been sent successfully. Our property advisor will reach out to you shortly.');
     }
 }
+

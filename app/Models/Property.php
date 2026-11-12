@@ -115,3 +115,4 @@ class Property extends Model
         return $images;
     }
 }
+

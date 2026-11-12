@@ -44,3 +44,4 @@ class SiteSetting extends Model
         );
     }
 }
+
