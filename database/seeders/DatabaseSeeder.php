@@ -89,9 +89,9 @@ class DatabaseSeeder extends Seeder
             [
                 'section_key' => 'hero_bg',
                 'title' => 'Hero Section Background',
-                'description' => 'The large banner image on the homepage with the eco-friendly house and morning sun.',
+                'description' => 'The large banner image on the homepage featuring luxury modern eco architecture.',
                 'image_path' => null,
-                'fallback_url' => 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2400&q=85',
+                'fallback_url' => 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=85',
             ],
             [
                 'section_key' => 'about_hero',

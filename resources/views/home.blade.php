@@ -6,10 +6,10 @@
 
     <!-- 1. HERO SECTION (Matching User Image Perfectly) -->
     @php
-        $heroBg = isset($siteImages['hero_bg']) ? $siteImages['hero_bg']->url : 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2400&q=85';
+        $heroBg = isset($siteImages['hero_bg']) ? $siteImages['hero_bg']->url : 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=85';
     @endphp
     <section class="relative min-h-[580px] lg:min-h-[660px] flex items-center bg-slate-900 bg-cover bg-center bg-no-repeat overflow-hidden" 
-             style="background-image: linear-gradient(to right, rgba(10, 20, 15, 0.85) 0%, rgba(10, 20, 15, 0.65) 45%, rgba(10, 20, 15, 0.25) 100%), url('{{ $heroBg }}');">
+             style="background-image: linear-gradient(to right, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.65) 45%, rgba(15, 23, 42, 0.20) 100%), url('{{ $heroBg }}');">
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 relative z-10 w-full">
             <div class="max-w-2xl text-white space-y-6">
