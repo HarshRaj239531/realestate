@@ -9,7 +9,7 @@
     @endphp
 
     <div class="min-h-[70vh] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-3xl shadow-xl overflow-hidden max-w-4xl w-full border border-slate-200 grid grid-cols-1 md:grid-cols-2">
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden max-w-4xl w-full border border-slate-200 grid grid-cols-1 md:grid-cols-2" data-motion="zoom-in">
             
             <!-- Left: Visual Column -->
             <div class="hidden md:flex flex-col justify-between p-10 bg-slate-900 text-white bg-cover bg-center relative"

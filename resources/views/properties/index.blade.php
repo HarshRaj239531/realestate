@@ -11,7 +11,7 @@
     @endphp
     <div class="relative py-16 sm:py-24 bg-slate-900 bg-cover bg-center overflow-hidden" 
          style="background-image: linear-gradient(to right, rgba(15, 23, 42, 0.90), rgba(15, 23, 42, 0.75)), url('{{ $propHero }}');">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10" data-motion="fade-up">
             <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/70 border border-emerald-500/30 px-3.5 py-1.5 rounded-full">
                 Verified Listings
             </span>
@@ -28,7 +28,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         
         <!-- Filter Card -->
-        <div class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-5 mb-10">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-5 mb-10" data-motion="fade-up">
             <form method="GET" action="{{ route('properties.index') }}" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                 
                 <!-- Keyword -->
@@ -110,7 +110,7 @@
 
         <!-- Property Grid -->
         @if($properties->count() > 0)
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-motion-stagger>
                 @foreach($properties as $prop)
                     <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col group">
                         

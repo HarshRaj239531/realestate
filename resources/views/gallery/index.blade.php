@@ -11,7 +11,7 @@
     @endphp
     <div class="relative py-16 sm:py-24 bg-slate-900 bg-cover bg-center overflow-hidden" 
          style="background-image: linear-gradient(to right, rgba(15, 23, 42, 0.90), rgba(15, 23, 42, 0.70)), url('{{ $galleryHero }}');">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10" data-motion="fade-up">
             <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/70 border border-emerald-500/30 px-3.5 py-1.5 rounded-full">
                 Visual Portfolio
             </span>
@@ -26,7 +26,7 @@
 
     <!-- Category Filter Tabs -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-12" data-motion="fade-up">
             @foreach($categories as $key => $label)
                 <a href="{{ route('gallery.index', ['category' => $key]) }}" 
                    class="px-5 py-2.5 rounded-full text-xs font-bold transition shadow-sm {{ $category === $key ? 'bg-brand-primary text-white shadow-emerald-600/20' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200' }}">
@@ -37,7 +37,7 @@
 
         <!-- Gallery Grid -->
         @if($items->count() > 0)
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" data-motion-stagger>
                 @foreach($items as $item)
                     <div class="group relative rounded-2xl overflow-hidden shadow-md h-80 bg-slate-900 cursor-pointer border border-slate-200"
                          onclick="openLightbox('{{ $item->image_url }}', '{{ addslashes($item->title) }}', '{{ addslashes($item->description ?? '') }}', '{{ addslashes($item->location ?? '') }}')">

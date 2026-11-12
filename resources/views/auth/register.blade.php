@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="min-h-[70vh] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-3xl shadow-xl overflow-hidden max-w-lg w-full border border-slate-200 p-8 sm:p-10">
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden max-w-lg w-full border border-slate-200 p-8 sm:p-10" data-motion="zoom-in">
             
             <div class="text-center mb-6">
                 <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">

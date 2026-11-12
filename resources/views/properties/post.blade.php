@@ -5,7 +5,7 @@
 
 @section('content')
 
-    <div class="bg-slate-900 py-12 px-4 text-center text-white">
+    <div class="bg-slate-900 py-12 px-4 text-center text-white" data-motion="fade-up">
         <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30">
             Owners & Verified Brokers
         </span>
@@ -16,7 +16,7 @@
     </div>
 
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="bg-white rounded-3xl shadow-xl border border-slate-200 p-6 sm:p-10">
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-200 p-6 sm:p-10" data-motion="fade-up">
             
             <form method="POST" action="{{ route('post-property.store') }}" enctype="multipart/form-data" class="space-y-8">
                 @csrf

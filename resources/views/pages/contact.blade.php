@@ -11,7 +11,7 @@
     @endphp
     <div class="relative py-16 sm:py-24 bg-slate-900 bg-cover bg-center overflow-hidden" 
          style="background-image: linear-gradient(to right, rgba(15, 23, 42, 0.90), rgba(15, 23, 42, 0.75)), url('{{ $contactHero }}');">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10" data-motion="fade-up">
             <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/70 border border-emerald-500/30 px-3.5 py-1.5 rounded-full">
                 Get In Touch
             </span>
@@ -29,7 +29,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
             
             <!-- Left 1 Col: Contact Info Cards -->
-            <div class="space-y-6">
+            <div class="space-y-6" data-motion="fade-left">
                 
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
                     <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl mb-3">
@@ -76,7 +76,7 @@
             </div>
 
             <!-- Right 2 Cols: Interactive Message Form -->
-            <div class="lg:col-span-2">
+            <div class="lg:col-span-2" data-motion="fade-right">
                 <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-lg border border-slate-200">
                     <div class="mb-6">
                         <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">

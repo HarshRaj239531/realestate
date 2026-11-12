@@ -22,7 +22,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         
         <!-- Header Info -->
-        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8" data-motion="fade-up">
             <div>
                 <div class="flex flex-wrap items-center gap-2 mb-2">
                     <span class="bg-brand-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
@@ -59,7 +59,7 @@
         </div>
 
         <!-- Photo Gallery Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-12" data-motion="fade-up">
             <!-- Main Hero Image (Col Span 2) -->
             <div class="lg:col-span-2 rounded-2xl overflow-hidden shadow-lg h-[340px] sm:h-[480px] bg-slate-900 relative">
                 <img id="mainViewer" src="{{ $property->main_image_url }}" alt="{{ $property->title }}" class="w-full h-full object-cover">
@@ -80,7 +80,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
             
             <!-- Left 2 Cols: Specs, Overview, Description, Amenities -->
-            <div class="lg:col-span-2 space-y-10">
+            <div class="lg:col-span-2 space-y-10" data-motion="fade-left">
 
                 <!-- Key Specs Strip -->
                 <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
@@ -165,7 +165,7 @@
             </div>
 
             <!-- Right 1 Col: Sticky Contact / Schedule Visit Sidebar -->
-            <div class="lg:sticky lg:top-24 space-y-6">
+            <div class="lg:sticky lg:top-24 space-y-6" data-motion="fade-right">
                 
                 <!-- Inquiry Box -->
                 <div class="bg-white rounded-2xl p-6 sm:p-7 shadow-lg border border-slate-200">
