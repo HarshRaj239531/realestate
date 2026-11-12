@@ -9,8 +9,9 @@ if [ "$DB_CONNECTION" = "sqlite" ] || [ -z "$DB_CONNECTION" ]; then
     chmod -R 775 database
 fi
 
-# Run database migrations
+# Run database migrations and seed default data
 php artisan migrate --force || true
+php artisan db:seed --force || true
 
 # Cache Laravel configs if APP_KEY is provided
 if [ -n "$APP_KEY" ]; then
