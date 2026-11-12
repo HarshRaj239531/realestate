@@ -8,55 +8,69 @@
     <div class="max-w-6xl mx-auto space-y-6">
         
         <!-- Header Banner -->
-        <div class="bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div>
-                <span class="text-[11px] font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/60">
-                    Live Configuration Engine
-                </span>
-                <h3 class="text-2xl font-black text-slate-900 tracking-tight mt-2">Complete Website Control Panel</h3>
-                <p class="text-xs text-slate-500 mt-1 max-w-2xl leading-relaxed">
-                    Control every single text, color, phone number, address, team member, testimonial, and FAQ across the entire website in real-time. No code changes needed.
+        <div class="bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div class="space-y-1">
+                <div class="flex items-center space-x-2">
+                    <span class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                        Central Control Engine
+                    </span>
+                    <span class="text-xs text-slate-400 font-medium">• Zero Code Required</span>
+                </div>
+                <h3 class="text-2xl font-black text-slate-900 tracking-tight">Complete Website Customizer</h3>
+                <p class="text-xs text-slate-500 max-w-2xl leading-relaxed">
+                    Update all text, theme palette, leadership portraits, reviews, FAQs, contact details, and social links in real-time across the live website.
                 </p>
             </div>
-            <div class="shrink-0 flex items-center space-x-2">
-                <span class="text-xs font-bold text-slate-500">Live Auto-Propagate</span>
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <div class="shrink-0 flex items-center space-x-3">
+                <div class="px-3.5 py-2 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-600 flex items-center space-x-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Live Propagation Active</span>
+                </div>
             </div>
         </div>
 
         <form method="POST" action="{{ route('admin.settings.update') }}" id="settingsForm" class="space-y-6">
             @csrf
 
-            <!-- Navigation Tabs Bar -->
+            <!-- Navigation Tabs Bar (Modern Pill Tabs with Crisp SVG Icons) -->
             <div class="bg-white border border-slate-200/80 rounded-2xl p-2 shadow-xs flex flex-wrap items-center gap-1.5 sticky top-20 z-20">
                 <button type="button" onclick="switchTab('tab-theme')" id="btn-tab-theme" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 bg-emerald-50 text-emerald-900 border border-emerald-200/80 shadow-2xs">
-                    <span>🎨 Colors & Theme</span>
+                    <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+                    <span>Colors & Theme</span>
                 </button>
                 <button type="button" onclick="switchTab('tab-general')" id="btn-tab-general" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100">
-                    <span>🏢 General & Brand</span>
+                    <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    <span>General & Brand</span>
                 </button>
                 <button type="button" onclick="switchTab('tab-contact')" id="btn-tab-contact" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100">
-                    <span>📞 Contact & Offices</span>
+                    <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    <span>Contact & Offices</span>
                 </button>
                 <button type="button" onclick="switchTab('tab-hero')" id="btn-tab-hero" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100">
-                    <span>🏠 Hero & Stats</span>
+                    <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                    <span>Hero & Stats</span>
                 </button>
                 <button type="button" onclick="switchTab('tab-team')" id="btn-tab-team" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100">
-                    <span>👥 Team Section</span>
+                    <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    <span>Leadership Team</span>
                 </button>
                 <button type="button" onclick="switchTab('tab-testimonials')" id="btn-tab-testimonials" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100">
-                    <span>💬 Testimonials</span>
+                    <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                    <span>Testimonials</span>
                 </button>
                 <button type="button" onclick="switchTab('tab-faqs')" id="btn-tab-faqs" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100">
-                    <span>❓ FAQs</span>
+                    <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span>FAQs Accordion</span>
                 </button>
                 <button type="button" onclick="switchTab('tab-social')" id="btn-tab-social" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100">
-                    <span>🌐 Social & Links</span>
+                    <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                    <span>Social Media</span>
                 </button>
 
                 <div class="ml-auto pl-2">
-                    <button type="submit" class="px-5 py-2 bg-brand-primary hover:bg-brand-dark text-white text-xs font-extrabold rounded-xl transition shadow-xs flex items-center space-x-1">
-                        <span>💾 Save Settings</span>
+                    <button type="submit" class="px-5 py-2.5 bg-brand-primary hover:bg-brand-dark text-white text-xs font-extrabold rounded-xl transition shadow-sm shadow-emerald-600/25 flex items-center space-x-1.5">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span>Save Changes</span>
                     </button>
                 </div>
             </div>
@@ -66,58 +80,58 @@
                 <div class="border-b border-slate-100 pb-4 flex items-center justify-between">
                     <div>
                         <h4 class="text-lg font-black text-slate-900 flex items-center space-x-2">
-                            <span>🎨 Dynamic Color Palette</span>
+                            <span>Dynamic Color Palette</span>
                         </h4>
                         <p class="text-xs text-slate-500 mt-0.5">Control the primary theme colors across navigation, buttons, badges, and accents.</p>
                     </div>
-                    <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">Instant Live Propagation</span>
+                    <span class="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Live Propagation</span>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Primary Color -->
-                    <div class="p-4 bg-slate-50/70 rounded-2xl border border-slate-200/80 space-y-3">
+                    <div class="p-5 bg-slate-50/70 rounded-2xl border border-slate-200/80 space-y-3">
                         <label class="block text-xs font-bold text-slate-700">Primary Color (Buttons & Badges)</label>
                         <div class="flex items-center space-x-3">
-                            <input type="color" name="brand_primary_color" id="picker_primary" value="{{ $siteSettings['brand_primary_color'] ?? '#2f9049' }}" class="w-12 h-12 rounded-xl cursor-pointer bg-white border border-slate-300 p-0.5" onchange="document.getElementById('text_primary').value = this.value">
+                            <input type="color" name="brand_primary_color" id="picker_primary" value="{{ $siteSettings['brand_primary_color'] ?? '#2f9049' }}" class="w-12 h-12 rounded-xl cursor-pointer bg-white border border-slate-300 p-0.5 shadow-2xs" onchange="document.getElementById('text_primary').value = this.value">
                             <div>
                                 <input type="text" name="brand_primary_color" id="text_primary" value="{{ $siteSettings['brand_primary_color'] ?? '#2f9049' }}" class="text-xs px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg text-slate-800 font-mono w-28 focus:ring-1 focus:ring-emerald-500" onkeyup="document.getElementById('picker_primary').value = this.value">
-                                <div class="text-[10px] text-slate-400 mt-0.5">Default: #2f9049</div>
+                                <div class="text-[10px] text-slate-400 mt-0.5 font-medium">Default: #2f9049</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Dark Shade -->
-                    <div class="p-4 bg-slate-50/70 rounded-2xl border border-slate-200/80 space-y-3">
+                    <div class="p-5 bg-slate-50/70 rounded-2xl border border-slate-200/80 space-y-3">
                         <label class="block text-xs font-bold text-slate-700">Dark Shade (Hover States)</label>
                         <div class="flex items-center space-x-3">
-                            <input type="color" name="brand_primary_dark" id="picker_dark" value="{{ $siteSettings['brand_primary_dark'] ?? '#236c37' }}" class="w-12 h-12 rounded-xl cursor-pointer bg-white border border-slate-300 p-0.5" onchange="document.getElementById('text_dark').value = this.value">
+                            <input type="color" name="brand_primary_dark" id="picker_dark" value="{{ $siteSettings['brand_primary_dark'] ?? '#236c37' }}" class="w-12 h-12 rounded-xl cursor-pointer bg-white border border-slate-300 p-0.5 shadow-2xs" onchange="document.getElementById('text_dark').value = this.value">
                             <div>
                                 <input type="text" name="brand_primary_dark" id="text_dark" value="{{ $siteSettings['brand_primary_dark'] ?? '#236c37' }}" class="text-xs px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg text-slate-800 font-mono w-28 focus:ring-1 focus:ring-emerald-500" onkeyup="document.getElementById('picker_dark').value = this.value">
-                                <div class="text-[10px] text-slate-400 mt-0.5">Default: #236c37</div>
+                                <div class="text-[10px] text-slate-400 mt-0.5 font-medium">Default: #236c37</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Topbar Color -->
-                    <div class="p-4 bg-slate-50/70 rounded-2xl border border-slate-200/80 space-y-3">
-                        <label class="block text-xs font-bold text-slate-700">Topbar & Footer (Slate/Dark)</label>
+                    <div class="p-5 bg-slate-50/70 rounded-2xl border border-slate-200/80 space-y-3">
+                        <label class="block text-xs font-bold text-slate-700">Topbar & Dark Elements</label>
                         <div class="flex items-center space-x-3">
-                            <input type="color" name="brand_topbar_color" id="picker_topbar" value="{{ $siteSettings['brand_topbar_color'] ?? '#18202d' }}" class="w-12 h-12 rounded-xl cursor-pointer bg-white border border-slate-300 p-0.5" onchange="document.getElementById('text_topbar').value = this.value">
+                            <input type="color" name="brand_topbar_color" id="picker_topbar" value="{{ $siteSettings['brand_topbar_color'] ?? '#18202d' }}" class="w-12 h-12 rounded-xl cursor-pointer bg-white border border-slate-300 p-0.5 shadow-2xs" onchange="document.getElementById('text_topbar').value = this.value">
                             <div>
                                 <input type="text" name="brand_topbar_color" id="text_topbar" value="{{ $siteSettings['brand_topbar_color'] ?? '#18202d' }}" class="text-xs px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg text-slate-800 font-mono w-28 focus:ring-1 focus:ring-emerald-500" onkeyup="document.getElementById('picker_topbar').value = this.value">
-                                <div class="text-[10px] text-slate-400 mt-0.5">Default: #18202d</div>
+                                <div class="text-[10px] text-slate-400 mt-0.5 font-medium">Default: #18202d</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Accent Color -->
-                    <div class="p-4 bg-slate-50/70 rounded-2xl border border-slate-200/80 space-y-3">
-                        <label class="block text-xs font-bold text-slate-700">Accent Gold / Highlights</label>
+                    <div class="p-5 bg-slate-50/70 rounded-2xl border border-slate-200/80 space-y-3">
+                        <label class="block text-xs font-bold text-slate-700">Accent Gold & Highlights</label>
                         <div class="flex items-center space-x-3">
-                            <input type="color" name="brand_accent_color" id="picker_accent" value="{{ $siteSettings['brand_accent_color'] ?? '#d97706' }}" class="w-12 h-12 rounded-xl cursor-pointer bg-white border border-slate-300 p-0.5" onchange="document.getElementById('text_accent').value = this.value">
+                            <input type="color" name="brand_accent_color" id="picker_accent" value="{{ $siteSettings['brand_accent_color'] ?? '#d97706' }}" class="w-12 h-12 rounded-xl cursor-pointer bg-white border border-slate-300 p-0.5 shadow-2xs" onchange="document.getElementById('text_accent').value = this.value">
                             <div>
                                 <input type="text" name="brand_accent_color" id="text_accent" value="{{ $siteSettings['brand_accent_color'] ?? '#d97706' }}" class="text-xs px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg text-slate-800 font-mono w-28 focus:ring-1 focus:ring-emerald-500" onkeyup="document.getElementById('picker_accent').value = this.value">
-                                <div class="text-[10px] text-slate-400 mt-0.5">Default: #d97706</div>
+                                <div class="text-[10px] text-slate-400 mt-0.5 font-medium">Default: #d97706</div>
                             </div>
                         </div>
                     </div>
@@ -127,7 +141,7 @@
             <!-- TAB 2: GENERAL & BRAND IDENTITY -->
             <div id="tab-general" class="tab-panel hidden bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xs space-y-5">
                 <div class="border-b border-slate-100 pb-3">
-                    <h4 class="text-lg font-black text-slate-900">🏢 General Brand Identity</h4>
+                    <h4 class="text-lg font-black text-slate-900">General Brand Identity</h4>
                     <p class="text-xs text-slate-500">Core company naming and public brand identity parameters.</p>
                 </div>
 
@@ -135,7 +149,7 @@
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1.5">Official Brand / Company Name</label>
                         <input type="text" name="brand_name" value="{{ $siteSettings['brand_name'] ?? 'RealEstate' }}" class="w-full text-xs sm:text-sm px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                        <p class="text-[11px] text-slate-400 mt-1">Appears in header, footer, page titles, and legal disclaimers.</p>
+                        <p class="text-[11px] text-slate-400 mt-1">Appears in navbar, footer, page titles, and disclaimers.</p>
                     </div>
 
                     <div>
@@ -165,7 +179,7 @@
             <!-- TAB 3: CONTACT & OFFICES -->
             <div id="tab-contact" class="tab-panel hidden bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xs space-y-5">
                 <div class="border-b border-slate-100 pb-3">
-                    <h4 class="text-lg font-black text-slate-900">📞 Contact & Office Information</h4>
+                    <h4 class="text-lg font-black text-slate-900">Contact & Office Information</h4>
                     <p class="text-xs text-slate-500">Official contact points displayed on topbar, footer, and contact page.</p>
                 </div>
 
@@ -201,7 +215,7 @@
             <!-- TAB 4: HOMEPAGE HERO & STATS COUNTERS -->
             <div id="tab-hero" class="tab-panel hidden bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xs space-y-5">
                 <div class="border-b border-slate-100 pb-3">
-                    <h4 class="text-lg font-black text-slate-900">🏠 Homepage Hero Banner & Key Metrics</h4>
+                    <h4 class="text-lg font-black text-slate-900">Homepage Hero Banner & Key Metrics</h4>
                     <p class="text-xs text-slate-500">Customize the prime hero area and animated achievement counters on the homepage.</p>
                 </div>
 
@@ -231,7 +245,7 @@
                     <h5 class="text-sm font-extrabold text-slate-900 mb-3">Live Achievement Stats Counters</h5>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                         <!-- Stat 1 -->
-                        <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200">
                             <label class="block text-[11px] font-bold text-slate-600 mb-1">Stat 1 Value</label>
                             <input type="text" name="stat_experience" value="{{ $siteSettings['stat_experience'] ?? '15+' }}" class="w-full text-xs px-3 py-2 bg-white border border-slate-300 rounded-lg font-bold text-emerald-700 mb-2">
                             <label class="block text-[11px] font-bold text-slate-600 mb-1">Stat 1 Label</label>
@@ -239,7 +253,7 @@
                         </div>
 
                         <!-- Stat 2 -->
-                        <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200">
                             <label class="block text-[11px] font-bold text-slate-600 mb-1">Stat 2 Value</label>
                             <input type="text" name="stat_projects" value="{{ $siteSettings['stat_projects'] ?? '50+' }}" class="w-full text-xs px-3 py-2 bg-white border border-slate-300 rounded-lg font-bold text-emerald-700 mb-2">
                             <label class="block text-[11px] font-bold text-slate-600 mb-1">Stat 2 Label</label>
@@ -247,7 +261,7 @@
                         </div>
 
                         <!-- Stat 3 -->
-                        <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200">
                             <label class="block text-[11px] font-bold text-slate-600 mb-1">Stat 3 Value</label>
                             <input type="text" name="stat_families" value="{{ $siteSettings['stat_families'] ?? '10K+' }}" class="w-full text-xs px-3 py-2 bg-white border border-slate-300 rounded-lg font-bold text-emerald-700 mb-2">
                             <label class="block text-[11px] font-bold text-slate-600 mb-1">Stat 3 Label</label>
@@ -255,7 +269,7 @@
                         </div>
 
                         <!-- Stat 4 -->
-                        <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200">
                             <label class="block text-[11px] font-bold text-slate-600 mb-1">Stat 4 Value</label>
                             <input type="text" name="stat_acres" value="{{ $siteSettings['stat_acres'] ?? '250+' }}" class="w-full text-xs px-3 py-2 bg-white border border-slate-300 rounded-lg font-bold text-emerald-700 mb-2">
                             <label class="block text-[11px] font-bold text-slate-600 mb-1">Stat 4 Label</label>
@@ -268,7 +282,7 @@
             <!-- TAB 5: LEADERSHIP TEAM ("THE MINDS OF TRUST") -->
             <div id="tab-team" class="tab-panel hidden bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xs space-y-6">
                 <div class="border-b border-slate-100 pb-3">
-                    <h4 class="text-lg font-black text-slate-900">👥 Leadership Team Section ("The Minds of Trust")</h4>
+                    <h4 class="text-lg font-black text-slate-900">Leadership Team Section ("The Minds of Trust")</h4>
                     <p class="text-xs text-slate-500">Edit titles, photos, names, and designations of the executive team shown on the homepage.</p>
                 </div>
 
@@ -359,7 +373,7 @@
             <!-- TAB 6: CLIENT TESTIMONIALS ("TRUSTED BY THOUSANDS") -->
             <div id="tab-testimonials" class="tab-panel hidden bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xs space-y-6">
                 <div class="border-b border-slate-100 pb-3">
-                    <h4 class="text-lg font-black text-slate-900">💬 Client Testimonials ("Trusted by Thousands")</h4>
+                    <h4 class="text-lg font-black text-slate-900">Client Testimonials ("Trusted by Thousands")</h4>
                     <p class="text-xs text-slate-500">Edit client reviews, names, ratings, and quotes displayed on the homepage.</p>
                 </div>
 
@@ -445,7 +459,7 @@
             <!-- TAB 7: FREQUENTLY ASKED QUESTIONS (FAQS) -->
             <div id="tab-faqs" class="tab-panel hidden bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xs space-y-6">
                 <div class="border-b border-slate-100 pb-3">
-                    <h4 class="text-lg font-black text-slate-900">❓ Frequently Asked Questions (FAQs)</h4>
+                    <h4 class="text-lg font-black text-slate-900">Frequently Asked Questions (FAQs)</h4>
                     <p class="text-xs text-slate-500">Edit the animated accordion questions and answers displayed on the homepage.</p>
                 </div>
 
@@ -516,7 +530,7 @@
             <!-- TAB 8: SOCIAL MEDIA & LINKS -->
             <div id="tab-social" class="tab-panel hidden bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xs space-y-5">
                 <div class="border-b border-slate-100 pb-3">
-                    <h4 class="text-lg font-black text-slate-900">🌐 Social Media Channels & External Links</h4>
+                    <h4 class="text-lg font-black text-slate-900">Social Media Channels & External Links</h4>
                     <p class="text-xs text-slate-500">Official social profiles linked in the topbar and footer icons.</p>
                 </div>
 
@@ -549,10 +563,16 @@
             </div>
 
             <!-- Bottom Master Save Button -->
-            <div class="pt-4">
-                <button type="submit" class="w-full py-4 bg-brand-primary hover:bg-brand-dark text-white font-extrabold rounded-2xl text-sm transition shadow-lg flex items-center justify-center space-x-2">
-                    <span>💾 Save All Settings & Propagate Across Entire Website</span>
-                </button>
+            <div class="pt-4 sticky bottom-4 z-20">
+                <div class="bg-white/95 backdrop-blur-md p-3 rounded-2xl border border-slate-200 shadow-xl flex items-center justify-between gap-4">
+                    <div class="text-xs text-slate-500 pl-3 hidden sm:block">
+                        Ready to apply changes? They will take effect across the entire public website instantly.
+                    </div>
+                    <button type="submit" class="w-full sm:w-auto px-8 py-3.5 bg-brand-primary hover:bg-brand-dark text-white font-black rounded-xl text-xs sm:text-sm transition shadow-sm shadow-emerald-600/30 flex items-center justify-center space-x-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span>Save All Configurations</span>
+                    </button>
+                </div>
             </div>
 
         </form>
@@ -570,6 +590,8 @@
             // Remove active style from all buttons
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.className = 'tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100';
+                const icon = btn.querySelector('svg');
+                if (icon) icon.className = 'w-3.5 h-3.5 text-slate-400';
             });
 
             // Show selected panel
@@ -582,6 +604,8 @@
             const activeBtn = document.getElementById('btn-' + tabId);
             if (activeBtn) {
                 activeBtn.className = 'tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 bg-emerald-50 text-emerald-900 border border-emerald-200/80 shadow-2xs';
+                const icon = activeBtn.querySelector('svg');
+                if (icon) icon.className = 'w-3.5 h-3.5 text-emerald-700';
             }
         }
     </script>
