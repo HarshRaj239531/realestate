@@ -6,7 +6,7 @@
 
     <!-- 1. HERO SECTION (Matching User Image Perfectly) -->
     @php
-        $heroBg = isset($siteImages['hero_bg']) ? $siteImages['hero_bg']->url : asset('images/site/original_screenshot.jpg');
+        $heroBg = isset($siteImages['hero_bg']) ? $siteImages['hero_bg']->url : 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2400&q=85';
     @endphp
     <section class="relative min-h-[580px] lg:min-h-[660px] flex items-center bg-slate-900 bg-cover bg-center bg-no-repeat overflow-hidden" 
              style="background-image: linear-gradient(to right, rgba(10, 20, 15, 0.85) 0%, rgba(10, 20, 15, 0.65) 45%, rgba(10, 20, 15, 0.25) 100%), url('{{ $heroBg }}');">
