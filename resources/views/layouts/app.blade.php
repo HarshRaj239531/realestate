@@ -78,37 +78,37 @@
 
     <!-- 2. Main Navbar with Emerald Green background & Angled Logo Badge -->
     <header class="bg-brand-primary sticky top-0 z-40 shadow-lg">
-        <div class="max-w-7xl mx-auto flex items-stretch justify-between">
+        <div class="max-w-7xl mx-auto flex items-stretch justify-between min-h-[76px] sm:min-h-[86px]">
             
             <!-- Logo Section with Angled White Badge matching design -->
-            <div class="relative bg-white py-2.5 px-6 sm:px-10 clip-logo-badge flex items-center shadow-md">
+            <div class="relative bg-white py-4 sm:py-5 px-8 sm:px-12 clip-logo-badge flex items-center shadow-md">
                 <a href="{{ route('home') }}" class="flex items-center space-x-2">
                     @php
                         $logoUrl = isset($siteImages['site_logo']) ? $siteImages['site_logo']->url : asset('images/site/logo.svg');
                     @endphp
-                    <img src="{{ $logoUrl }}" alt="{{ $siteSettings['brand_name'] ?? 'AG HOMES INDIA' }}" class="h-10 sm:h-12 w-auto object-contain">
+                    <img src="{{ $logoUrl }}" alt="{{ $siteSettings['brand_name'] ?? 'AG HOMES INDIA' }}" class="h-11 sm:h-14 w-auto object-contain">
                 </a>
             </div>
 
             <!-- Desktop Navigation Links -->
-            <nav class="hidden lg:flex items-center space-x-7 px-4 text-sm font-medium text-white">
-                <a href="{{ route('home') }}" class="py-2 transition hover:text-emerald-100 {{ request()->routeIs('home') ? 'border-b-2 border-white font-semibold' : '' }}">
+            <nav class="hidden lg:flex items-center space-x-8 px-6 text-[15px] font-semibold text-white">
+                <a href="{{ route('home') }}" class="py-2 transition hover:text-emerald-100 {{ request()->routeIs('home') ? 'border-b-2 border-white font-bold' : '' }}">
                     Home
                 </a>
-                <a href="{{ route('properties.index') }}" class="py-2 transition hover:text-emerald-100 {{ request()->routeIs('properties.*') ? 'border-b-2 border-white font-semibold' : '' }}">
+                <a href="{{ route('properties.index') }}" class="py-2 transition hover:text-emerald-100 {{ request()->routeIs('properties.*') ? 'border-b-2 border-white font-bold' : '' }}">
                     Property
                 </a>
                 <!-- Replaced Blog & News with Gallery per user request -->
-                <a href="{{ route('gallery.index') }}" class="py-2 transition hover:text-emerald-100 {{ request()->routeIs('gallery.*') ? 'border-b-2 border-white font-semibold' : '' }}">
+                <a href="{{ route('gallery.index') }}" class="py-2 transition hover:text-emerald-100 {{ request()->routeIs('gallery.*') ? 'border-b-2 border-white font-bold' : '' }}">
                     Gallery
                 </a>
-                <a href="{{ route('post-property.create') }}" class="py-2 transition hover:text-emerald-100 {{ request()->routeIs('post-property.*') ? 'border-b-2 border-white font-semibold' : '' }}">
+                <a href="{{ route('post-property.create') }}" class="py-2 transition hover:text-emerald-100 {{ request()->routeIs('post-property.*') ? 'border-b-2 border-white font-bold' : '' }}">
                     Post Property
                 </a>
 
                 <!-- About Us Dropdown -->
                 <div class="relative group">
-                    <a href="{{ route('about') }}" class="py-2 flex items-center space-x-1 transition hover:text-emerald-100 {{ request()->routeIs('about') ? 'border-b-2 border-white font-semibold' : '' }}">
+                    <a href="{{ route('about') }}" class="py-2 flex items-center space-x-1.5 transition hover:text-emerald-100 {{ request()->routeIs('about') ? 'border-b-2 border-white font-bold' : '' }}">
                         <span>About Us</span>
                         <svg class="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -122,62 +122,20 @@
                     </div>
                 </div>
 
-                <a href="{{ route('contact') }}" class="py-2 transition hover:text-emerald-100 {{ request()->routeIs('contact') ? 'border-b-2 border-white font-semibold' : '' }}">
+                <a href="{{ route('contact') }}" class="py-2 transition hover:text-emerald-100 {{ request()->routeIs('contact') ? 'border-b-2 border-white font-bold' : '' }}">
                     Contact
                 </a>
             </nav>
 
-            <!-- Right Action Buttons (Register & Login) matching image style -->
-            <div class="flex items-center space-x-3 px-4 py-2">
-                @auth
-                    <!-- Authenticated Dropdown -->
-                    <div class="relative group">
-                        <button class="flex items-center space-x-2 text-xs font-semibold bg-emerald-800/60 hover:bg-emerald-800 text-white px-3.5 py-2 rounded-full border border-emerald-400/30 transition">
-                            <span class="w-6 h-6 rounded-full bg-white text-emerald-800 flex items-center justify-center font-bold text-xs uppercase">
-                                {{ substr(Auth::user()->name, 0, 1) }}
-                            </span>
-                            <span class="hidden sm:inline">{{ Auth::user()->name }}</span>
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                            </svg>
-                        </button>
-                        <div class="absolute right-0 mt-1 w-44 bg-white text-slate-800 rounded-xl shadow-xl py-2 hidden group-hover:block border border-slate-100 z-50">
-                            @if(Auth::user()->isAdmin())
-                                <a href="{{ route('admin.dashboard') }}" class="block px-4 py-2 text-xs font-semibold text-emerald-700 hover:bg-emerald-50 transition">
-                                    ⚙️ Admin Dashboard
-                                </a>
-                                <div class="border-t border-slate-100 my-1"></div>
-                            @endif
-                            <a href="{{ route('post-property.create') }}" class="block px-4 py-2 text-xs hover:bg-slate-50 transition">Post a Property</a>
-                            <form method="POST" action="{{ route('logout') }}" class="block">
-                                @csrf
-                                <button type="submit" class="w-full text-left px-4 py-2 text-xs text-rose-600 hover:bg-rose-50 transition">
-                                    Log Out
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                @else
-                    <!-- + Register Button (Pill outline) -->
-                    <a href="{{ route('register') }}" class="inline-flex items-center space-x-1.5 text-xs font-semibold text-white bg-emerald-700/70 hover:bg-emerald-700 border border-emerald-300/40 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full transition shadow-sm">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
-                        </svg>
-                        <span>+ Register</span>
-                    </a>
-
-                    <!-- Login Button (Solid Pill) -->
-                    <a href="{{ route('login') }}" class="inline-flex items-center space-x-1.5 text-xs font-semibold text-white bg-brand-dark hover:bg-emerald-950 border border-emerald-500/50 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full transition shadow-sm">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
-                        </svg>
-                        <span>Login</span>
-                    </a>
-                @endauth
-
-                <!-- Mobile Menu Button -->
-                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-white hover:text-emerald-200">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- Mobile Menu Toggle Button (Register & Login buttons removed) -->
+            <div class="flex lg:hidden items-center px-4">
+                <button onclick="toggleMobileMenu()" class="p-2 text-white hover:text-emerald-200">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>

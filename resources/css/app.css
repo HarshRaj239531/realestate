@@ -61,7 +61,7 @@
 
 /* Angled cut badge for the logo matching the design */
 .clip-logo-badge {
-    clip-path: polygon(0 0, calc(100% - 32px) 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, calc(100% - 38px) 0, 100% 100%, 0 100%);
 }
 
 @media (max-width: 640px) {
