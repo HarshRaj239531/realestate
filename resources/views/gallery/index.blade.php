@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Architecture & Project Gallery | ' . ($siteSettings['brand_name'] ?? 'AG HOMES INDIA'))
+@section('title', 'Architecture & Project Gallery | ' . ($siteSettings['brand_name'] ?? 'RealEstate'))
 @section('meta_description', 'High-definition photo gallery of our sustainable luxury villas, biophilic architecture, green landscapes, and interior craftsmanship.')
 
 @section('content')

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Properties Catalog | ' . ($siteSettings['brand_name'] ?? 'AG HOMES INDIA'))
+@section('title', 'Properties Catalog | ' . ($siteSettings['brand_name'] ?? 'RealEstate'))
 @section('meta_description', 'Explore eco-friendly luxury villas, apartments, penthouses, and residential plots in Gurugram and India.')
 
 @section('content')

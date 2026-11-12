@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', ($siteSettings['brand_name'] ?? 'AG HOMES INDIA') . ' | Eco-Friendly Luxury Real Estate')</title>
+    <title>@yield('title', ($siteSettings['brand_name'] ?? 'RealEstate') . ' | Eco-Friendly Luxury Real Estate')</title>
     <meta name="description" content="@yield('meta_description', $siteSettings['brand_tagline'] ?? 'Find Eco-Friendly Homes Easily. Featured one stop destination for real estate.')">
 
     <!-- Fonts -->
@@ -86,7 +86,7 @@
                     @php
                         $logoUrl = isset($siteImages['site_logo']) ? $siteImages['site_logo']->url : asset('images/site/logo.svg');
                     @endphp
-                    <img src="{{ $logoUrl }}" alt="{{ $siteSettings['brand_name'] ?? 'AG HOMES INDIA' }}" class="h-11 sm:h-14 w-auto object-contain">
+                    <img src="{{ $logoUrl }}" alt="{{ $siteSettings['brand_name'] ?? 'RealEstate' }}" class="h-11 sm:h-14 w-auto object-contain">
                 </a>
             </div>
 
@@ -118,7 +118,7 @@
                         <a href="{{ route('about') }}#story" class="block px-4 py-2 text-xs hover:bg-emerald-50 hover:text-emerald-700 transition">Our Story & Heritage</a>
                         <a href="{{ route('about') }}#mission" class="block px-4 py-2 text-xs hover:bg-emerald-50 hover:text-emerald-700 transition">Vision & Eco Mission</a>
                         <a href="{{ route('about') }}#leadership" class="block px-4 py-2 text-xs hover:bg-emerald-50 hover:text-emerald-700 transition">Leadership Team</a>
-                        <a href="{{ route('about') }}#why-us" class="block px-4 py-2 text-xs hover:bg-emerald-50 hover:text-emerald-700 transition">Why Choose AG Homes</a>
+                        <a href="{{ route('about') }}#why-us" class="block px-4 py-2 text-xs hover:bg-emerald-50 hover:text-emerald-700 transition">Why Choose RealEstate</a>
                     </div>
                 </div>
 
@@ -259,10 +259,10 @@
                 <!-- Column 1: Brand Info -->
                 <div class="space-y-4">
                     <div class="bg-white rounded-lg p-2.5 inline-block">
-                        <img src="{{ $logoUrl }}" alt="{{ $siteSettings['brand_name'] ?? 'AG HOMES INDIA' }}" class="h-10 w-auto">
+                        <img src="{{ $logoUrl }}" alt="{{ $siteSettings['brand_name'] ?? 'RealEstate' }}" class="h-10 w-auto">
                     </div>
                     <p class="text-xs leading-relaxed text-slate-400">
-                        {{ $siteSettings['brand_name'] ?? 'AG HOMES INDIA' }} is India's pioneer in luxury eco-friendly residences, biophilic architecture, and zero-carbon sustainable communities.
+                        {{ $siteSettings['brand_name'] ?? 'RealEstate' }} is India's pioneer in luxury eco-friendly residences, biophilic architecture, and zero-carbon sustainable communities.
                     </p>
                     <div class="flex items-center space-x-3 text-sm text-slate-300">
                         <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -310,7 +310,7 @@
                         </li>
                         <li class="flex items-center space-x-2">
                             <span class="text-emerald-400">✉️</span>
-                            <a href="mailto:{{ $siteSettings['contact_email'] ?? 'info@aghomesindia.com' }}" class="hover:text-white">{{ $siteSettings['contact_email'] ?? 'info@aghomesindia.com' }}</a>
+                            <a href="mailto:{{ $siteSettings['contact_email'] ?? 'info@realestate.com' }}" class="hover:text-white">{{ $siteSettings['contact_email'] ?? 'info@realestate.com' }}</a>
                         </li>
                     </ul>
 
@@ -327,7 +327,7 @@
 
             <!-- Bottom Copyright Bar -->
             <div class="mt-12 pt-6 border-t border-slate-800 text-center flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
-                <p>&copy; {{ date('Y') }} {{ $siteSettings['brand_name'] ?? 'AG HOMES INDIA' }}. All rights reserved.</p>
+                <p>&copy; {{ date('Y') }} {{ $siteSettings['brand_name'] ?? 'RealEstate' }}. All rights reserved.</p>
                 <p class="mt-2 sm:mt-0">Built with Laravel & Tailwind CSS. Designed for sustainable living.</p>
             </div>
         </div>

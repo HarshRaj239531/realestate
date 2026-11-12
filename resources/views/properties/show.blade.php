@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $property->title . ' | ' . ($siteSettings['brand_name'] ?? 'AG HOMES INDIA'))
+@section('title', $property->title . ' | ' . ($siteSettings['brand_name'] ?? 'RealEstate'))
 @section('meta_description', Str::limit(strip_tags($property->description), 160))
 
 @section('content')

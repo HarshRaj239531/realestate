@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Post Your Property | ' . ($siteSettings['brand_name'] ?? 'AG HOMES INDIA'))
-@section('meta_description', 'List your residential, commercial, or plot property on AG HOMES INDIA to connect with verified buyers and tenants.')
+@section('title', 'Post Your Property | ' . ($siteSettings['brand_name'] ?? 'RealEstate'))
+@section('meta_description', 'List your residential, commercial, or plot property on RealEstate to connect with verified buyers and tenants.')
 
 @section('content')
 

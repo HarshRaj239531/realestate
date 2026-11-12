@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Create Account | ' . ($siteSettings['brand_name'] ?? 'AG HOMES INDIA'))
+@section('title', 'Create Account | ' . ($siteSettings['brand_name'] ?? 'RealEstate'))
 
 @section('content')
 
@@ -9,7 +9,7 @@
             
             <div class="text-center mb-6">
                 <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">
-                    Join AG Homes
+                    Join RealEstate
                 </span>
                 <h2 class="text-2xl font-black text-slate-900 mt-2">Create Your Account</h2>
                 <p class="text-xs text-slate-500 mt-1">Access verified eco-friendly homes, private tours, and post your property.</p>

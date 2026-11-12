@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us & Office Locations | ' . ($siteSettings['brand_name'] ?? 'AG HOMES INDIA'))
-@section('meta_description', 'Get in touch with AG HOMES INDIA. Visit our sales experience centre or contact our senior real estate consultants.')
+@section('title', 'Contact Us & Office Locations | ' . ($siteSettings['brand_name'] ?? 'RealEstate'))
+@section('meta_description', 'Get in touch with RealEstate. Visit our sales experience centre or contact our senior real estate consultants.')
 
 @section('content')
 

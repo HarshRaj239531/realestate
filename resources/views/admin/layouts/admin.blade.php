@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'Admin Dashboard') | {{ $siteSettings['brand_name'] ?? 'AG HOMES INDIA' }}</title>
+    <title>@yield('title', 'Admin Dashboard') | {{ $siteSettings['brand_name'] ?? 'RealEstate' }}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,10 +31,10 @@
         <div class="p-5 border-b border-slate-800 flex items-center justify-between">
             <a href="{{ route('admin.dashboard') }}" class="flex items-center space-x-2">
                 <span class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-sm shadow">
-                    AG
+                    RE
                 </span>
                 <div>
-                    <div class="font-extrabold text-sm text-white tracking-wide">AG HOMES</div>
+                    <div class="font-extrabold text-sm text-white tracking-wide">RealEstate</div>
                     <div class="text-[10px] text-emerald-400 font-bold uppercase tracking-wider">Admin Panel</div>
                 </div>
             </a>

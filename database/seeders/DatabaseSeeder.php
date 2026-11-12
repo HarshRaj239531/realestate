@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         $admin = User::updateOrCreate(
             ['email' => 'admin@realestate.com'],
             [
-                'name' => 'Admin AG Homes',
+                'name' => 'Admin RealEstate',
                 'password' => Hash::make('admin123'),
                 'is_admin' => true,
                 'phone' => '+91 98765 43210',
@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
 
         // 2. Centralized Site Settings (Colors & Brand Details)
         $settings = [
-            ['key' => 'brand_name', 'value' => 'AG HOMES INDIA', 'label' => 'Brand Name', 'group' => 'general', 'type' => 'text'],
+            ['key' => 'brand_name', 'value' => 'RealEstate', 'label' => 'Brand Name', 'group' => 'general', 'type' => 'text'],
             ['key' => 'brand_tagline', 'value' => 'Find Eco-Friendly Homes Easily', 'label' => 'Brand Tagline', 'group' => 'general', 'type' => 'text'],
             ['key' => 'brand_primary_color', 'value' => '#2f9049', 'label' => 'Primary Brand Color (Green)', 'group' => 'theme', 'type' => 'color'],
             ['key' => 'brand_primary_dark', 'value' => '#236c37', 'label' => 'Primary Dark Color', 'group' => 'theme', 'type' => 'color'],
@@ -50,11 +50,11 @@ class DatabaseSeeder extends Seeder
             ['key' => 'brand_accent_color', 'value' => '#0284c7', 'label' => 'Accent Color', 'group' => 'theme', 'type' => 'color'],
             
             ['key' => 'contact_phone', 'value' => '+91 98765 43210', 'label' => 'Support Phone', 'group' => 'contact', 'type' => 'text'],
-            ['key' => 'contact_email', 'value' => 'info@aghomesindia.com', 'label' => 'Official Email', 'group' => 'contact', 'type' => 'email'],
+            ['key' => 'contact_email', 'value' => 'info@realestate.com', 'label' => 'Official Email', 'group' => 'contact', 'type' => 'email'],
             ['key' => 'contact_whatsapp', 'value' => '919876543210', 'label' => 'WhatsApp Number', 'group' => 'contact', 'type' => 'text'],
             ['key' => 'contact_address', 'value' => 'Skyline Tower, 4th Floor, Golf Course Extension Road, Gurugram, Haryana 122002', 'label' => 'Head Office Address', 'group' => 'contact', 'type' => 'textarea'],
             
-            ['key' => 'hero_pill_badge', 'value' => '🏠 AG Homes', 'label' => 'Hero Floating Badge', 'group' => 'hero', 'type' => 'text'],
+            ['key' => 'hero_pill_badge', 'value' => '🏠 RealEstate', 'label' => 'Hero Floating Badge', 'group' => 'hero', 'type' => 'text'],
             ['key' => 'hero_title', 'value' => 'Find Eco-Friendly Homes Easily', 'label' => 'Hero Main Heading', 'group' => 'hero', 'type' => 'text'],
             ['key' => 'hero_subtitle', 'value' => 'Featured one stop destination for all your real estate needs. Explore premium plots and homes designed for you.', 'label' => 'Hero Subtitle', 'group' => 'hero', 'type' => 'textarea'],
             ['key' => 'hero_cta_text', 'value' => 'Explore Now', 'label' => 'Hero CTA Button Text', 'group' => 'hero', 'type' => 'text'],

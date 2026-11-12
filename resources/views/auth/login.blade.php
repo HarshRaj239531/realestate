@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Sign In | ' . ($siteSettings['brand_name'] ?? 'AG HOMES INDIA'))
+@section('title', 'Sign In | ' . ($siteSettings['brand_name'] ?? 'RealEstate'))
 
 @section('content')
 

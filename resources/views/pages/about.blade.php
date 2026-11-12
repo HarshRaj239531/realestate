@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'About Our Legacy & Green Vision | ' . ($siteSettings['brand_name'] ?? 'AG HOMES INDIA'))
-@section('meta_description', 'Discover how AG HOMES INDIA is redefining luxury real estate with biophilic architecture, zero-carbon engineering, and sustainable development.')
+@section('title', 'About Our Legacy & Green Vision | ' . ($siteSettings['brand_name'] ?? 'RealEstate'))
+@section('meta_description', 'Discover how RealEstate is redefining luxury real estate with biophilic architecture, zero-carbon engineering, and sustainable development.')
 
 @section('content')
 
@@ -36,7 +36,7 @@
                     Where Architectural Elegance Meets Environmental Consciousness
                 </h2>
                 <p class="text-sm text-slate-600 leading-relaxed">
-                    Founded in 2011, <strong>{{ $siteSettings['brand_name'] ?? 'AG HOMES INDIA' }}</strong> emerged with a resolute vision: to eradicate the conflict between luxury living and environmental stewardship.
+                    Founded in 2011, <strong>{{ $siteSettings['brand_name'] ?? 'RealEstate' }}</strong> emerged with a resolute vision: to eradicate the conflict between luxury living and environmental stewardship.
                 </p>
                 <p class="text-sm text-slate-600 leading-relaxed">
                     Over the last 15 years, we have handed over keys to more than 10,000 delighted families across 50+ masterplanned developments. Every villa, apartment, and plot we develop adheres to strict IGBC and LEED green building benchmarks—utilizing locally sourced stone, certified timber, smart thermal insulation, and integrated renewable power.
@@ -117,7 +117,7 @@
                 Core Advantages
             </span>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">
-                Why Families Trust AG HOMES INDIA
+                Why Families Trust {{ $siteSettings['brand_name'] ?? 'RealEstate' }}
             </h2>
             <p class="text-sm text-slate-600 mt-2">
                 Four uncompromised standards embedded in every foundation we lay.

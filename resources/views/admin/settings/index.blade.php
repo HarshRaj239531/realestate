@@ -77,7 +77,7 @@
 
                 <div>
                     <label class="block text-xs font-semibold text-slate-300 mb-1">Hero Floating Badge Text</label>
-                    <input type="text" name="hero_pill_badge" value="{{ $siteSettings['hero_pill_badge'] ?? '🏠 AG Homes' }}" class="w-full text-xs px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-white">
+                    <input type="text" name="hero_pill_badge" value="{{ $siteSettings['hero_pill_badge'] ?? '🏠 RealEstate' }}" class="w-full text-xs px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-white">
                 </div>
 
                 <div>
@@ -131,7 +131,7 @@
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 mb-1">Brand Name</label>
-                        <input type="text" name="brand_name" value="{{ $siteSettings['brand_name'] ?? 'AG HOMES INDIA' }}" class="w-full text-xs px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-white">
+                        <input type="text" name="brand_name" value="{{ $siteSettings['brand_name'] ?? 'RealEstate' }}" class="w-full text-xs px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-white">
                     </div>
                 </div>
 

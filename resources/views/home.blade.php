@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', ($siteSettings['brand_name'] ?? 'AG HOMES INDIA') . ' | Find Eco-Friendly Homes Easily')
+@section('title', ($siteSettings['brand_name'] ?? 'RealEstate') . ' | Find Eco-Friendly Homes Easily')
 
 @section('content')
 
@@ -14,9 +14,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 relative z-10 w-full">
             <div class="max-w-2xl text-white space-y-6">
                 
-                <!-- Floating Badge (🏠 AG Homes) -->
+                <!-- Floating Badge (🏠 RealEstate) -->
                 <div class="inline-flex items-center space-x-2 bg-white/15 backdrop-blur-md border border-white/25 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide text-white shadow-sm">
-                    <span>{{ $siteSettings['hero_pill_badge'] ?? '🏠 AG Homes' }}</span>
+                    <span>{{ $siteSettings['hero_pill_badge'] ?? '🏠 RealEstate' }}</span>
                 </div>
 
                 <!-- Main Hero Heading -->
@@ -283,7 +283,7 @@
                         Preserving Nature Without Compromising Luxury
                     </h2>
                     <p class="text-sm text-emerald-100/90 leading-relaxed">
-                        Every home developed under AG HOMES INDIA is engineered for longevity and environmental balance. We integrate renewable solar energy, harvested rainwater management, and biophilic architectural principles that drastically reduce energy costs while promoting wellness.
+                        Every home developed under {{ $siteSettings['brand_name'] ?? 'RealEstate' }} is engineered for longevity and environmental balance. We integrate renewable solar energy, harvested rainwater management, and biophilic architectural principles that drastically reduce energy costs while promoting wellness.
                     </p>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
